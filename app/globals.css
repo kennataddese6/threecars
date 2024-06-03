@@ -4,16 +4,21 @@
   box-sizing: border-box;
 }
 html,
-body {
+body,
+.__className_aaf875 {
   background-color: black;
 }
 .center-text {
   text-align: center;
   background-color: gray;
 }
+.white-text {
+  color: white;
+}
 .headerContainer {
   position: fixed;
   top: 0;
+  background-color: black;
 }
 .headerSubContainer {
   margin: auto;
@@ -46,4 +51,23 @@ body {
 .headerItem:hover {
   color: dodgerblue;
   cursor: pointer;
+}
+.contentContainer {
+  margin: 140px auto;
+  width: 80%;
+  display: flex;
+}
+.shopFilterPanel {
+  background-color: grey;
+}
+.shopCards {
+  margin: 12px;
+  display: flex;
+}
+.shopImage {
+  height: 212px;
+  width: 100%;
+}
+.shopDescriptionHolder {
+  padding: 16px;
 }
