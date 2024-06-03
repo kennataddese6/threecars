@@ -59,7 +59,7 @@ body,
   display: flex;
 }
 .shopFilterPanel {
-  background-color: grey;
+  padding: 64px 0;
 }
 .shopCards {
   margin: 12px 0 12px 12px;
@@ -92,4 +92,12 @@ body,
   padding: 8px 24px;
   color: white;
   z-index: 0;
+}
+.filtercard {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  padding: 16px 36px 16px 0;
+  justify-content: space-between;
+  cursor: pointer;
 }

@@ -6,7 +6,7 @@ import Car4 from "@/assets/Car4.jpeg";
 import { FaGear, FaGasPump } from "react-icons/fa6";
 import { FaTachometerAlt } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
-import { IoIosColorPalette } from "react-icons/io";
+import { IoIosColorPalette, IoIosArrowForward } from "react-icons/io";
 export default function Car() {
   const headerListItems = [
     "Build you kit",
@@ -77,10 +77,31 @@ export default function Car() {
       </div>
       {/* Content */}
       <div className="contentContainer col-lg-11 col-xl-7">
-        <div className="shopFilterPanel col-lg-4">hi</div>
+        <div className="shopFilterPanel col-lg-4">
+          <div className="filtercard">
+            <h6 className="white-text"> Make</h6>
+            <IoIosArrowForward color="white" />
+          </div>
+          <div className="filtercard">
+            <h6 className="white-text"> Body type</h6>
+            <IoIosArrowForward color="white" />
+          </div>
+          <div className="filtercard">
+            <h6 className="white-text"> Doors</h6>
+            <IoIosArrowForward color="white" />
+          </div>
+          <div className="filtercard">
+            <h6 className="white-text"> Seat</h6>
+            <IoIosArrowForward color="white" />
+          </div>
+          <div className="filtercard">
+            <h6 className="white-text"> Fuel</h6>
+            <IoIosArrowForward color="white" />
+          </div>
+        </div>
         <div className="col-lg-8">
-          {carList.map((car) => (
-            <div className="shopCards">
+          {carList.map((car, index) => (
+            <div className="shopCards" key={index}>
               <div className="col-lg-5">
                 {car.trending && <div className="tredingBanner">Trending </div>}
                 <Image
