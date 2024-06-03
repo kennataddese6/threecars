@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Car1 from "@/assets/Car1.jpeg";
 import Car2 from "@/assets/Car2.jpeg";
@@ -56,6 +58,10 @@ export default function Car() {
       trending: false,
     },
   ];
+  const router = useRouter();
+  const handleClick = (id: number) => {
+    router.push(`/car/${id + 1}`);
+  };
   return (
     <>
       {/* Header */}
@@ -134,7 +140,12 @@ export default function Car() {
                     <p className="px-2 white-text">{car.miles}</p>
                   </div>
                 </div>
-                <button className="buildbutton btn btn-primary">Build</button>
+                <button
+                  className="buildbutton btn btn-primary"
+                  onClick={() => handleClick(index)}
+                >
+                  Build
+                </button>
               </div>
             </div>
           ))}
