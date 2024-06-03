@@ -87,7 +87,13 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
         </div>
         <div className="col-lg-4">
           {" "}
-          <div className="addtokitcontainer">blue</div>
+          <div className="addtokitcontainer">
+            <input
+              type="text"
+              placeholder="Search"
+              className="buildkitsearchbar"
+            />
+          </div>
         </div>
       </div>
     </>
