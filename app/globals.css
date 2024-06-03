@@ -19,6 +19,7 @@ body,
   position: fixed;
   top: 0;
   background-color: black;
+  z-index: 1;
 }
 .headerSubContainer {
   margin: auto;
@@ -61,7 +62,7 @@ body,
   background-color: grey;
 }
 .shopCards {
-  margin: 12px;
+  margin: 12px 0 12px 12px;
   display: flex;
 }
 .shopImage {
@@ -69,5 +70,26 @@ body,
   width: 100%;
 }
 .shopDescriptionHolder {
-  padding: 16px;
+  padding: 6px 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.moredetailContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding: 6px 0 0 0;
+}
+.buildbutton {
+  width: 120px;
+  display: block;
+  margin-left: auto;
+}
+.tredingBanner {
+  position: absolute;
+  background-color: dodgerblue;
+  padding: 8px 24px;
+  color: white;
+  z-index: 0;
 }
