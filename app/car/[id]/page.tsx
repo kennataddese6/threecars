@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Car1 from "@/assets/Car1.jpeg";
 import Car2 from "@/assets/Car2.webp";
@@ -9,16 +10,19 @@ import Light3 from "@/assets/light3.jpg";
 import Light4 from "@/assets/light4.jpeg";
 import Light5 from "@/assets/image5.jpg";
 import { FaPlus } from "react-icons/fa";
+import { useState, useEffect } from "react";
 interface Paramter {
   id: number;
 }
 export default function BuildCarkit({ params }: { params: Paramter }) {
+  const [choices, setChoices] = useState<number[]>([]);
   const headerListItems = [
     "Build you kit",
     "Latest deals",
     "Shop",
     "Why choose us",
   ];
+
   const carList = [
     {
       name: "Volkswagen Golf R 2.0 TSI R 5dr",
@@ -61,6 +65,38 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       trending: false,
     },
   ];
+  const kits = [
+    {
+      title: "Light title",
+      image: Light1,
+      description: "A little description about the light",
+      added: false,
+    },
+    {
+      title: "Light title",
+      image: Light2,
+      description: "A little description about the light",
+      added: false,
+    },
+    {
+      title: "Light title",
+      image: Light3,
+      description: "A little description about the light",
+      added: false,
+    },
+    {
+      title: "Light title",
+      image: Light4,
+      description: "A little description about the light",
+      added: false,
+    },
+    {
+      title: "Light title",
+      image: Light5,
+      description: "A little description about the light",
+      added: false,
+    },
+  ];
   return (
     <>
       {/* Header */}
@@ -90,35 +126,16 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
             ></Image>
           </div>
           <div className="choiceContainer">
-            <div className="choiceItemContainer col-lg-3">
-              <Image
-                src={Light1}
-                alt="Car 1"
-                className="carpreivewbuildkit"
-              ></Image>
-            </div>
-            <div className="choiceItemContainer col-lg-3">
-              {" "}
-              <Image
-                src={Light2}
-                alt="Car 1"
-                className="carpreivewbuildkit"
-              ></Image>
-            </div>
-            <div className="choiceItemContainer col-lg-3">
-              <Image
-                src={Light3}
-                alt="Car 1"
-                className="carpreivewbuildkit"
-              ></Image>
-            </div>
-            <div className="choiceItemContainer col-lg-3">
-              <Image
-                src={Light2}
-                alt="Car 1"
-                className="carpreivewbuildkit"
-              ></Image>
-            </div>
+            {choices.length &&
+              choices.map((choice) => (
+                <div className="choiceItemContainer col-lg-3">
+                  <Image
+                    src={kits[choice].image}
+                    alt="Car 1"
+                    className="carpreivewbuildkit"
+                  ></Image>
+                </div>
+              ))}
           </div>
         </div>
         <div className="col-lg-4">
@@ -129,76 +146,29 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
               placeholder="Search"
               className="buildkitsearchbar"
             />
-            <div className="addKitsContainer">
-              <div className="addkitImagecontainer">
-                <Image src={Light1} alt="Car1" className="kitImage"></Image>
+            {kits.map((kit, index) => (
+              <div className="addKitsContainer" key={index}>
+                <div className="addkitImagecontainer">
+                  <Image
+                    src={kit.image}
+                    alt="Car1"
+                    className="kitImage"
+                  ></Image>
+                </div>
+                <div className="kitdescriptionContainer col-lg-7">
+                  <h6 className="white-text">{kit.title}</h6>
+                  <p className="white-text">{kit.description}</p>
+                </div>
+                <div
+                  className="addkitcontainer col-lg-1"
+                  onClick={() => {
+                    setChoices([...choices, index]);
+                  }}
+                >
+                  <FaPlus color="dodgerblue" />{" "}
+                </div>
               </div>
-              <div className="kitdescriptionContainer col-lg-7">
-                <h6 className="white-text">Light title</h6>
-                <p className="white-text">
-                  This is a small description about the light
-                </p>
-              </div>
-              <div className="addkitcontainer col-lg-1">
-                <FaPlus color="dodgerblue" />{" "}
-              </div>
-            </div>
-            <div className="addKitsContainer">
-              <div className="addkitImagecontainer">
-                <Image src={Light2} alt="Car1" className="kitImage"></Image>
-              </div>
-              <div className="kitdescriptionContainer col-lg-7">
-                <h6 className="white-text">Light title</h6>
-                <p className="white-text">
-                  This is a small description about the light
-                </p>
-              </div>
-              <div className="addkitcontainer col-lg-1">
-                <FaPlus color="dodgerblue" />{" "}
-              </div>
-            </div>
-            <div className="addKitsContainer">
-              <div className="addkitImagecontainer">
-                <Image src={Light3} alt="Car1" className="kitImage"></Image>
-              </div>
-              <div className="kitdescriptionContainer col-lg-7">
-                <h6 className="white-text">Light title</h6>
-                <p className="white-text">
-                  This is a small description about the light
-                </p>
-              </div>
-              <div className="addkitcontainer col-lg-1">
-                <FaPlus color="dodgerblue" />{" "}
-              </div>
-            </div>
-            <div className="addKitsContainer">
-              <div className="addkitImagecontainer">
-                <Image src={Light5} alt="Car1" className="kitImage"></Image>
-              </div>
-              <div className="kitdescriptionContainer col-lg-7">
-                <h6 className="white-text">Light title</h6>
-                <p className="white-text">
-                  This is a small description about the light
-                </p>
-              </div>
-              <div className="addkitcontainer col-lg-1">
-                <FaPlus color="dodgerblue" />{" "}
-              </div>
-            </div>
-            <div className="addKitsContainer">
-              <div className="addkitImagecontainer">
-                <Image src={Light4} alt="Car1" className="kitImage"></Image>
-              </div>
-              <div className="kitdescriptionContainer col-lg-7">
-                <h6 className="white-text">Light title</h6>
-                <p className="white-text">
-                  This is a small description about the light
-                </p>
-              </div>
-              <div className="addkitcontainer col-lg-1">
-                <FaPlus color="dodgerblue" />{" "}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
