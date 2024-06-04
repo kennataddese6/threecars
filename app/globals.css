@@ -108,6 +108,26 @@ body,
 .addtokitcontainer {
   margin: 0 8px;
   background-color: #0e0c0c;
+  height: 100%;
+  padding: 24px;
+  height: 66.5vh;
+  overflow-y: auto;
+}
+
+.addtokitcontainer::-webkit-scrollbar {
+  width: 1px;
+}
+
+.addtokitcontainer::-webkit-scrollbar-track {
+  background-color: #1a1a1a;
+}
+
+.addtokitcontainer::-webkit-scrollbar-thumb {
+  background-color: #555;
+}
+
+.addtokitcontainer::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
 }
 .carpreivewbuildkit {
   width: 100%;
@@ -116,9 +136,42 @@ body,
 }
 .buildkitsearchbar {
   border: none;
-  padding: 4px;
+  padding: 8px;
   border-radius: 4px;
-  box-shadow: 0 0 6px;
+  box-shadow: 0 0 12px black;
   display: block;
   margin: auto;
+}
+.addKitsContainer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  overflow-y: auto;
+  /* background-color: green; */
+}
+.addkitImagecontainer {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.addkitcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.kitImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.choiceContainer {
+  display: flex;
+}
+.choiceItemContainer {
+  padding: 6px;
 }
