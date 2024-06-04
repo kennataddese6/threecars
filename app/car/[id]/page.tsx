@@ -9,8 +9,8 @@ import Light2 from "@/assets/light2.jpg";
 import Light3 from "@/assets/light3.jpg";
 import Light4 from "@/assets/light4.jpeg";
 import Light5 from "@/assets/image5.jpg";
-import { FaPlus } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import { use, useEffect, useState } from "react";
 interface Paramter {
   id: number;
 }
@@ -65,7 +65,8 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       trending: false,
     },
   ];
-  const kits = [
+
+  const [kits, setKits] = useState([
     {
       title: "Light title",
       image: Light1,
@@ -96,7 +97,33 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       description: "A little description about the light",
       added: false,
     },
-  ];
+  ]);
+  const handleAdd = (index: number) => {
+    setChoices([...choices, index]);
+    const updatedKits = [...kits];
+
+    updatedKits[index] = {
+      ...updatedKits[index],
+      added: true,
+    };
+
+    setKits(updatedKits);
+  };
+  const handleMinus = (index: number) => {
+    setChoices(choices.filter((choice) => choice !== index));
+    const updatedKits = [...kits];
+
+    updatedKits[index] = {
+      ...updatedKits[index],
+      added: false,
+    };
+
+    setKits(updatedKits);
+  };
+
+  useEffect(() => {
+    console.log(choices);
+  }, [choices]);
   return (
     <>
       {/* Header */}
@@ -126,16 +153,17 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
             ></Image>
           </div>
           <div className="choiceContainer">
-            {choices.length &&
-              choices.map((choice) => (
-                <div className="choiceItemContainer col-lg-3">
-                  <Image
-                    src={kits[choice].image}
-                    alt="Car 1"
-                    className="carpreivewbuildkit"
-                  ></Image>
-                </div>
-              ))}
+            {choices.length
+              ? choices.map((choice, index) => (
+                  <div className="choiceItemContainer col-lg-3" key={index}>
+                    <Image
+                      src={kits[choice].image}
+                      alt="Car 1"
+                      className="carpreivewbuildkit"
+                    ></Image>
+                  </div>
+                ))
+              : ""}
           </div>
         </div>
         <div className="col-lg-4">
@@ -159,13 +187,22 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
                   <h6 className="white-text">{kit.title}</h6>
                   <p className="white-text">{kit.description}</p>
                 </div>
-                <div
-                  className="addkitcontainer col-lg-1"
-                  onClick={() => {
-                    setChoices([...choices, index]);
-                  }}
-                >
-                  <FaPlus color="dodgerblue" />{" "}
+                <div className="addkitcontainer col-lg-1">
+                  {!kit.added ? (
+                    <FaPlus
+                      color="dodgerblue"
+                      onClick={() => {
+                        handleAdd(index);
+                      }}
+                    />
+                  ) : (
+                    <FaMinus
+                      color="dodgerblue"
+                      onClick={() => {
+                        handleMinus(index);
+                      }}
+                    />
+                  )}{" "}
                 </div>
               </div>
             ))}
