@@ -1,10 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Car1 from "@/assets/Car1.jpeg";
+import Car1 from "@/assets/Car1.jpg";
 import Car2 from "@/assets/Car2.webp";
-import Car3 from "@/assets/Car3.jpeg";
-import Car4 from "@/assets/Car4.jpeg";
+import Car3 from "@/assets/Car3.webp";
+import Car4 from "@/assets/Car4.webp";
 import { FaGear, FaGasPump } from "react-icons/fa6";
 import { FaTachometerAlt } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";

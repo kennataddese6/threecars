@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import Car1 from "@/assets/Car1.jpeg";
+import Car1 from "@/assets/Car1.jpg";
 import Car2 from "@/assets/Car2.webp";
-import Car3 from "@/assets/Car3.jpeg";
-import Car4 from "@/assets/Car4.jpeg";
+import Car3 from "@/assets/Car3.webp";
+import Car4 from "@/assets/Car4.webp";
 import Light1 from "@/assets/light1.jpg";
 import Light2 from "@/assets/light2.jpg";
 import Light3 from "@/assets/light3.jpg";
@@ -197,7 +197,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
                     />
                   ) : (
                     <FaMinus
-                      color="dodgerblue"
+                      color="red"
                       onClick={() => {
                         handleMinus(index);
                       }}
