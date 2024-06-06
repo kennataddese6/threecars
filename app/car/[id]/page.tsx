@@ -11,6 +11,7 @@ import Light4 from "@/assets/light4.jpeg";
 import Light5 from "@/assets/image5.jpg";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { use, useEffect, useState } from "react";
+import Popup from "@/components/Popup";
 interface Paramter {
   id: number;
 }
@@ -127,6 +128,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
   return (
     <>
       {/* Header */}
+      <Popup headerText="Request an order" />
       <div className="headerContainer col-lg-12">
         <div className="headerSubContainer col-lg-11 col-xl-9">
           <div className="logoContainer col-lg-3">BRANDNAME</div>
