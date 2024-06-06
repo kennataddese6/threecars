@@ -151,7 +151,6 @@ body,
   align-items: center;
   padding: 4px;
   overflow-y: auto;
-  /* background-color: green; */
 }
 .addkitImagecontainer {
   width: 5rem;
@@ -175,7 +174,14 @@ body,
 }
 .choiceContainer {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .choiceItemContainer {
   padding: 6px;
+  height: 10rem;
+}
+.requestorderbutton {
+  margin-top: 6px;
+  height: 50px;
 }
