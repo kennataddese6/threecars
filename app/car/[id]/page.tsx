@@ -12,6 +12,7 @@ import Light5 from "@/assets/image5.jpg";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Popup from "@/components/Popup";
+import emailjs from "@emailjs/browser";
 interface Paramter {
   id: number;
 }
@@ -129,7 +130,35 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
     setPopupView(true);
   };
   const handleRequestOrder = () => {
-    console.log("email", email);
+    var templateParams = {
+      title: "You have an order",
+      email: process.env.NEXT_PUBLIC_RECIEVER,
+      description: `${email} has requested order for the following items`,
+    };
+    if (
+      process.env.NEXT_PUBLIC_SERVICE_ID &&
+      process.env.NEXT_PUBLIC_PUBLIC_KEY
+    ) {
+      emailjs
+        .send(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          "verfication_link",
+          templateParams,
+          {
+            publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+          }
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          (error) => {
+            console.log("FAILED...", error);
+          }
+        );
+    } else {
+      console.log("Missing environment variables: SERVICE_ID or PUBLIC_KEY");
+    }
     setPopupView(false);
   };
   useEffect(() => {
