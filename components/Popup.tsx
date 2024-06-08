@@ -1,11 +1,12 @@
 import { IoClose } from "react-icons/io5";
 interface PopupProps {
   headerText: String;
+  setPopupView: (value: Boolean) => void;
 }
-const Popup: React.FC<PopupProps> = ({ headerText }) => {
+const Popup: React.FC<PopupProps> = ({ headerText, setPopupView }) => {
   const popupContainerStyle = {
     backdropFilter: 'blur("12px")',
-    position: "absolute" as const,
+    position: "fixed" as const,
     top: 0,
     zIndex: 4,
     width: "100%",
@@ -23,6 +24,7 @@ const Popup: React.FC<PopupProps> = ({ headerText }) => {
     borderRadius: "8px",
     position: "relative" as const,
   };
+
   const inputstyle = {
     padding: "4px 10px",
     borderRadius: "4px",
@@ -55,7 +57,7 @@ const Popup: React.FC<PopupProps> = ({ headerText }) => {
     <>
       <div style={popupContainerStyle}>
         <div style={popstyle}>
-          <div style={closeIcon}>
+          <div style={closeIcon} onClick={() => setPopupView(false)}>
             <IoClose fontSize={20} color="white" />
           </div>
           <h3 style={whiteText}>{headerText}</h3>

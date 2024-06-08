@@ -10,13 +10,15 @@ import Light3 from "@/assets/light3.jpg";
 import Light4 from "@/assets/light4.jpeg";
 import Light5 from "@/assets/image5.jpg";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Popup from "@/components/Popup";
 interface Paramter {
   id: number;
 }
 export default function BuildCarkit({ params }: { params: Paramter }) {
   const [choices, setChoices] = useState<number[]>([]);
+  const [popupView, setPopupView] = useState<Boolean>(false);
+
   const headerListItems = [
     "Build you kit",
     "Latest deals",
@@ -122,13 +124,18 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
     setKits(updatedKits);
   };
 
+  const handleOrder = () => {
+    setPopupView(true);
+  };
   useEffect(() => {
     console.log(choices);
   }, [choices]);
   return (
     <>
+      {popupView && (
+        <Popup headerText="Request an order" setPopupView={setPopupView} />
+      )}
       {/* Header */}
-      <Popup headerText="Request an order" />
       <div className="headerContainer col-lg-12">
         <div className="headerSubContainer col-lg-11 col-xl-9">
           <div className="logoContainer col-lg-3">BRANDNAME</div>
@@ -168,13 +175,14 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
               : ""}
             {choices.length ? (
               choices.length % 4 ? (
-                <button className="btn btn-warning requestorderbutton">
+                <button className="btn btn-warning requestorderbutton" onClick={()=> handleOrder()}>
                   Request an order
                 </button>
               ) : (
                 <button
                   className="btn btn-warning requestorderbutton"
                   style={{ marginLeft: "auto" }}
+                  onClick={()=> handleOrder()}
                 >
                   Request an order
                 </button>
