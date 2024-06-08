@@ -17,6 +17,7 @@ interface Paramter {
 }
 export default function BuildCarkit({ params }: { params: Paramter }) {
   const [choices, setChoices] = useState<number[]>([]);
+  const [email, setEmail] = useState<String>("");
   const [popupView, setPopupView] = useState<Boolean>(false);
 
   const headerListItems = [
@@ -127,6 +128,10 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
   const handleOrder = () => {
     setPopupView(true);
   };
+  const handleRequestOrder = () => {
+    console.log("email", email);
+    setPopupView(false);
+  };
   useEffect(() => {
     console.log(choices);
   }, [choices]);
@@ -136,7 +141,9 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
         <Popup
           headerText="Request an order"
           setPopupView={setPopupView}
-          descriptionText="Requesting order for the following items"
+          descriptionText={`Requsting an order for ${choices.length} items`}
+          setEmail={setEmail}
+          callFunction={handleRequestOrder}
         />
       )}
       {/* Header */}

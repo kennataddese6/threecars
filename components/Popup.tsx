@@ -3,11 +3,15 @@ interface PopupProps {
   headerText: String;
   descriptionText: String;
   setPopupView: (value: Boolean) => void;
+  setEmail: (value: String) => void;
+  callFunction: () => void;
 }
 const Popup: React.FC<PopupProps> = ({
   headerText,
   descriptionText,
   setPopupView,
+  setEmail,
+  callFunction,
 }) => {
   const popupContainerStyle = {
     backdropFilter: 'blur("12px")',
@@ -72,8 +76,13 @@ const Popup: React.FC<PopupProps> = ({
               type="text"
               placeholder="Enter your email here"
               style={inputstyle}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <button className="btn btn-primary" style={whiteText}>
+            <button
+              className="btn btn-primary"
+              style={whiteText}
+              onClick={callFunction}
+            >
               {" "}
               Request order
             </button>
