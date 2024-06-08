@@ -133,7 +133,11 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
   return (
     <>
       {popupView && (
-        <Popup headerText="Request an order" setPopupView={setPopupView} />
+        <Popup
+          headerText="Request an order"
+          setPopupView={setPopupView}
+          descriptionText="Requesting order for the following items"
+        />
       )}
       {/* Header */}
       <div className="headerContainer col-lg-12">
@@ -175,14 +179,17 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
               : ""}
             {choices.length ? (
               choices.length % 4 ? (
-                <button className="btn btn-warning requestorderbutton" onClick={()=> handleOrder()}>
+                <button
+                  className="btn btn-warning requestorderbutton"
+                  onClick={() => handleOrder()}
+                >
                   Request an order
                 </button>
               ) : (
                 <button
                   className="btn btn-warning requestorderbutton"
                   style={{ marginLeft: "auto" }}
-                  onClick={()=> handleOrder()}
+                  onClick={() => handleOrder()}
                 >
                   Request an order
                 </button>

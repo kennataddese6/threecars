@@ -1,9 +1,14 @@
 import { IoClose } from "react-icons/io5";
 interface PopupProps {
   headerText: String;
+  descriptionText: String;
   setPopupView: (value: Boolean) => void;
 }
-const Popup: React.FC<PopupProps> = ({ headerText, setPopupView }) => {
+const Popup: React.FC<PopupProps> = ({
+  headerText,
+  descriptionText,
+  setPopupView,
+}) => {
   const popupContainerStyle = {
     backdropFilter: 'blur("12px")',
     position: "fixed" as const,
@@ -55,17 +60,13 @@ const Popup: React.FC<PopupProps> = ({ headerText, setPopupView }) => {
   };
   return (
     <>
-      <div style={popupContainerStyle}>
-        <div style={popstyle}>
+      <div style={popupContainerStyle} onClick={() => setPopupView(false)}>
+        <div style={popstyle} onClick={(e) => e.stopPropagation()}>
           <div style={closeIcon} onClick={() => setPopupView(false)}>
             <IoClose fontSize={20} color="white" />
           </div>
           <h3 style={whiteText}>{headerText}</h3>
-          <p style={whiteText}>
-            {" "}
-            This is a description about the text which could be about the item
-            or any other concept about the type of item{" "}
-          </p>
+          <p style={whiteText}>{descriptionText}</p>
           <div style={centerDiv}>
             <input
               type="text"
