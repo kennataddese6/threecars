@@ -154,10 +154,19 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
     setPopupView(true);
   };
   const handleRequestOrder = () => {
+    if (!email) {
+      toast.error('Enter you email');
+      return;
+    }
+    const list = `<ul> ${choices.map(
+      choice => `<li>${kits[choice].title}</li>`,
+    )}
+      </ul>
+    `;
     var templateParams = {
       title: 'You have an order',
       email: process.env.NEXT_PUBLIC_RECIEVER,
-      description: `${email} has requested order for the following items`,
+      description: `${email} has requested order for the following items ${list}`,
     };
     if (
       process.env.NEXT_PUBLIC_SERVICE_ID &&
@@ -175,22 +184,16 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
         .then(
           response => {
             toast.success('Your order is sent');
-            console.log('SUCCESS!', response.status, response.text);
           },
           error => {
             toast.error('Sending order failed');
-            console.log('FAILED...', error);
           },
         );
     } else {
       toast.error('Inalid configuration');
-      console.log('Missing environment variables: SERVICE_ID or PUBLIC_KEY');
     }
     setPopupView(false);
   };
-  useEffect(() => {
-    console.log(choices);
-  }, [choices]);
   return (
     <>
       <ToastContainer theme="dark" />
