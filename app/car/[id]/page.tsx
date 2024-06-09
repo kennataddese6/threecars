@@ -1,105 +1,107 @@
-"use client";
-import Image from "next/image";
-import Car1 from "@/assets/Car1.jpg";
-import Car2 from "@/assets/Car2.webp";
-import Car3 from "@/assets/Car3.webp";
-import Car4 from "@/assets/Car4.webp";
-import Light1 from "@/assets/light1.jpg";
-import Light2 from "@/assets/light2.jpg";
-import Light3 from "@/assets/light3.jpg";
-import Light4 from "@/assets/light4.jpeg";
-import Light5 from "@/assets/image5.jpg";
-import { FaPlus, FaMinus } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import Popup from "@/components/Popup";
-import emailjs from "@emailjs/browser";
+'use client';
+import Image from 'next/image';
+import Car1 from '@/assets/Car1.jpg';
+import Car2 from '@/assets/Car2.webp';
+import Car3 from '@/assets/Car3.webp';
+import Car4 from '@/assets/Car4.webp';
+import Light1 from '@/assets/light1.jpg';
+import Light2 from '@/assets/light2.jpg';
+import Light3 from '@/assets/light3.jpg';
+import Light4 from '@/assets/light4.jpeg';
+import Light5 from '@/assets/image5.jpg';
+import { FaPlus, FaMinus } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
+import Popup from '@/components/Popup';
+import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 interface Paramter {
   id: number;
 }
 export default function BuildCarkit({ params }: { params: Paramter }) {
   const [choices, setChoices] = useState<number[]>([]);
-  const [email, setEmail] = useState<String>("");
+  const [email, setEmail] = useState<String>('');
   const [popupView, setPopupView] = useState<Boolean>(false);
 
   const headerListItems = [
-    "Build you kit",
-    "Latest deals",
-    "Shop",
-    "Why choose us",
+    'Build you kit',
+    'Latest deals',
+    'Shop',
+    'Why choose us',
   ];
 
   const carList = [
     {
-      name: "Volkswagen Golf R 2.0 TSI R 5dr",
+      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
       image: Car1,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2019,
-      gas: "Petrol",
-      color: "Blue",
-      miles: "240 Km/h",
+      gas: 'Petrol',
+      color: 'Blue',
+      miles: '240 Km/h',
       trending: true,
     },
     {
-      name: "Volkswagen Golf R 2.0 TSI R 5dr",
+      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
       image: Car2,
-      gear: "Manual",
+      gear: 'Manual',
       date: 2023,
-      gas: "Diesel",
-      color: "Red",
-      miles: "320 Km/h",
+      gas: 'Diesel',
+      color: 'Red',
+      miles: '320 Km/h',
       trending: false,
     },
     {
-      name: "Volkswagen Golf R 2.0 TSI R 5dr",
+      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
       image: Car3,
-      gear: "Semiauto",
+      gear: 'Semiauto',
       date: 2024,
-      gas: "Gasoline",
-      color: "Grey",
-      miles: "180 Km/h",
+      gas: 'Gasoline',
+      color: 'Grey',
+      miles: '180 Km/h',
       trending: true,
     },
     {
-      name: "Volkswagen Golf R 2.0 TSI R 5dr",
+      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
       image: Car4,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2024,
-      gas: "Petrol",
-      color: "Red",
-      miles: "340 Km/h",
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
       trending: false,
     },
   ];
 
   const [kits, setKits] = useState([
     {
-      title: "Light title",
+      title: 'Light title',
       image: Light1,
-      description: "A little description about the light",
+      description: 'A little description about the light',
       added: false,
     },
     {
-      title: "Light title",
+      title: 'Light title',
       image: Light2,
-      description: "A little description about the light",
+      description: 'A little description about the light',
       added: false,
     },
     {
-      title: "Light title",
+      title: 'Light title',
       image: Light3,
-      description: "A little description about the light",
+      description: 'A little description about the light',
       added: false,
     },
     {
-      title: "Light title",
+      title: 'Light title',
       image: Light4,
-      description: "A little description about the light",
+      description: 'A little description about the light',
       added: false,
     },
     {
-      title: "Light title",
+      title: 'Light title',
       image: Light5,
-      description: "A little description about the light",
+      description: 'A little description about the light',
       added: false,
     },
   ]);
@@ -115,7 +117,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
     setKits(updatedKits);
   };
   const handleMinus = (index: number) => {
-    setChoices(choices.filter((choice) => choice !== index));
+    setChoices(choices.filter(choice => choice !== index));
     const updatedKits = [...kits];
 
     updatedKits[index] = {
@@ -131,7 +133,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
   };
   const handleRequestOrder = () => {
     var templateParams = {
-      title: "You have an order",
+      title: 'You have an order',
       email: process.env.NEXT_PUBLIC_RECIEVER,
       description: `${email} has requested order for the following items`,
     };
@@ -142,22 +144,25 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       emailjs
         .send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
-          "verfication_link",
+          'verfication_link',
           templateParams,
           {
             publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
-          }
+          },
         )
         .then(
-          (response) => {
-            console.log("SUCCESS!", response.status, response.text);
+          response => {
+            toast.success('Your order is sent');
+            console.log('SUCCESS!', response.status, response.text);
           },
-          (error) => {
-            console.log("FAILED...", error);
-          }
+          error => {
+            toast.error('Sending order failed');
+            console.log('FAILED...', error);
+          },
         );
     } else {
-      console.log("Missing environment variables: SERVICE_ID or PUBLIC_KEY");
+      toast.error('Inalid configuration');
+      console.log('Missing environment variables: SERVICE_ID or PUBLIC_KEY');
     }
     setPopupView(false);
   };
@@ -166,6 +171,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
   }, [choices]);
   return (
     <>
+      <ToastContainer theme="dark" />
       {popupView && (
         <Popup
           headerText="Request an order"
@@ -212,7 +218,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
                     ></Image>
                   </div>
                 ))
-              : ""}
+              : ''}
             {choices.length ? (
               choices.length % 4 ? (
                 <button
@@ -224,19 +230,19 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
               ) : (
                 <button
                   className="btn btn-warning requestorderbutton"
-                  style={{ marginLeft: "auto" }}
+                  style={{ marginLeft: 'auto' }}
                   onClick={() => handleOrder()}
                 >
                   Request an order
                 </button>
               )
             ) : (
-              ""
+              ''
             )}
           </div>
         </div>
         <div className="col-lg-4">
-          {" "}
+          {' '}
           <div className="addtokitcontainer">
             <input
               type="text"
@@ -271,7 +277,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
                         handleMinus(index);
                       }}
                     />
-                  )}{" "}
+                  )}{' '}
                 </div>
               </div>
             ))}
