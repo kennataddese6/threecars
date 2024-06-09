@@ -1,14 +1,16 @@
 'use client';
 import Image from 'next/image';
-import Car1 from '@/assets/Car1.jpg';
+import Car1 from '@/assets/Car1.webp';
 import Car2 from '@/assets/Car2.webp';
 import Car3 from '@/assets/Car3.webp';
 import Car4 from '@/assets/Car4.webp';
-import Light1 from '@/assets/light1.jpg';
-import Light2 from '@/assets/light2.jpg';
-import Light3 from '@/assets/light3.jpg';
-import Light4 from '@/assets/light4.jpeg';
-import Light5 from '@/assets/image5.jpg';
+import Car5 from '@/assets/Car5.webp';
+import Car6 from '@/assets/Car6.webp';
+import Light1 from '@/assets/light1.webp';
+import Light2 from '@/assets/light2.webp';
+import Light3 from '@/assets/light3.webp';
+import Light4 from '@/assets/light4.webp';
+import Light5 from '@/assets/light5.webp';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import Popup from '@/components/Popup';
@@ -71,35 +73,55 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       miles: '340 Km/h',
       trending: false,
     },
+    {
+      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
+      image: Car5,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
+      image: Car6,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
   ];
 
   const [kits, setKits] = useState([
     {
-      title: 'Light title',
+      title: 'Demon eyes',
       image: Light1,
       description: 'A little description about the light',
       added: false,
     },
     {
-      title: 'Light title',
+      title: 'Led Car strips',
       image: Light2,
       description: 'A little description about the light',
       added: false,
     },
     {
-      title: 'Light title',
+      title: 'Projector retrofit',
       image: Light3,
       description: 'A little description about the light',
       added: false,
     },
     {
-      title: 'Light title',
+      title: 'Halos',
       image: Light4,
       description: 'A little description about the light',
       added: false,
     },
     {
-      title: 'Light title',
+      title: 'Engraving lenses',
       image: Light5,
       description: 'A little description about the light',
       added: false,
