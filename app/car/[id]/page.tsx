@@ -6,6 +6,11 @@ import Car3 from '@/assets/Car3.webp';
 import Car4 from '@/assets/Car4.webp';
 import Car5 from '@/assets/Car5.webp';
 import Car6 from '@/assets/Car6.webp';
+import Car7 from '@/assets/Car7.webp';
+import Car8 from '@/assets/Car8.webp';
+import Car9 from '@/assets/Car9.webp';
+import Car10 from '@/assets/Car10.webp';
+import Car11 from '@/assets/Car11.webp';
 import Light1 from '@/assets/light1.webp';
 import Light2 from '@/assets/light2.webp';
 import Light3 from '@/assets/light3.webp';
@@ -34,7 +39,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
 
   const carList = [
     {
-      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
+      name: 'Lexus',
       image: Car1,
       gear: 'Automatic',
       date: 2019,
@@ -44,7 +49,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       trending: true,
     },
     {
-      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
+      name: 'RAM',
       image: Car2,
       gear: 'Manual',
       date: 2023,
@@ -54,17 +59,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       trending: false,
     },
     {
-      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
-      image: Car3,
-      gear: 'Semiauto',
-      date: 2024,
-      gas: 'Gasoline',
-      color: 'Grey',
-      miles: '180 Km/h',
-      trending: true,
-    },
-    {
-      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
+      name: 'Chevrolet',
       image: Car4,
       gear: 'Automatic',
       date: 2024,
@@ -74,7 +69,27 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       trending: false,
     },
     {
-      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
+      name: 'Mazda',
+      image: Car3,
+      gear: 'Semiauto',
+      date: 2024,
+      gas: 'Gasoline',
+      color: 'Grey',
+      miles: '180 Km/h',
+      trending: true,
+    },
+    {
+      name: 'Honda',
+      image: Car7,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Mini',
       image: Car5,
       gear: 'Automatic',
       date: 2024,
@@ -84,7 +99,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       trending: false,
     },
     {
-      name: 'Volkswagen Golf R 2.0 TSI R 5dr',
+      name: 'Subaru',
       image: Car6,
       gear: 'Automatic',
       date: 2024,
@@ -93,8 +108,47 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       miles: '340 Km/h',
       trending: false,
     },
+    {
+      name: 'Jeep',
+      image: Car8,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Audi',
+      image: Car9,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Dodge',
+      image: Car10,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Volkswagen',
+      image: Car11,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
   ];
-
   const [kits, setKits] = useState([
     {
       title: 'Demon eyes',
@@ -166,7 +220,9 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
     var templateParams = {
       title: 'You have an order',
       email: process.env.NEXT_PUBLIC_RECIEVER,
-      description: `${email} has requested order for the following items ${list}`,
+      description: `${email} has requested order for the following items for the car model ${
+        carList[params.id].name
+      }: ${list}`,
     };
     if (
       process.env.NEXT_PUBLIC_SERVICE_ID &&
@@ -184,6 +240,8 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
         .then(
           response => {
             toast.success('Your order is sent');
+            setEmail('');
+            setChoices([]);
           },
           error => {
             toast.error('Sending order failed');

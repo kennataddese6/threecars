@@ -7,6 +7,11 @@ import Car3 from '@/assets/Car3.webp';
 import Car4 from '@/assets/Car4.webp';
 import Car5 from '@/assets/Car5.webp';
 import Car6 from '@/assets/Car6.webp';
+import Car7 from '@/assets/Car7.webp';
+import Car8 from '@/assets/Car8.webp';
+import Car9 from '@/assets/Car9.webp';
+import Car10 from '@/assets/Car10.webp';
+import Car11 from '@/assets/Car11.webp';
 import { FaGear, FaGasPump } from 'react-icons/fa6';
 import { FaTachometerAlt } from 'react-icons/fa';
 import { MdDateRange } from 'react-icons/md';
@@ -20,7 +25,7 @@ export default function Car() {
   ];
   const carList = [
     {
-      name: 'Audi',
+      name: 'Lexus',
       image: Car1,
       gear: 'Automatic',
       date: 2019,
@@ -30,7 +35,7 @@ export default function Car() {
       trending: true,
     },
     {
-      name: 'Ford',
+      name: 'RAM',
       image: Car2,
       gear: 'Manual',
       date: 2023,
@@ -40,17 +45,7 @@ export default function Car() {
       trending: false,
     },
     {
-      name: 'BMW',
-      image: Car3,
-      gear: 'Semiauto',
-      date: 2024,
-      gas: 'Gasoline',
-      color: 'Grey',
-      miles: '180 Km/h',
-      trending: true,
-    },
-    {
-      name: 'Toyota',
+      name: 'Chevrolet',
       image: Car4,
       gear: 'Automatic',
       date: 2024,
@@ -60,7 +55,27 @@ export default function Car() {
       trending: false,
     },
     {
+      name: 'Mazda',
+      image: Car3,
+      gear: 'Semiauto',
+      date: 2024,
+      gas: 'Gasoline',
+      color: 'Grey',
+      miles: '180 Km/h',
+      trending: true,
+    },
+    {
       name: 'Honda',
+      image: Car7,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Mini',
       image: Car5,
       gear: 'Automatic',
       date: 2024,
@@ -70,8 +85,48 @@ export default function Car() {
       trending: false,
     },
     {
-      name: 'Nissan',
+      name: 'Subaru',
       image: Car6,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Jeep',
+      image: Car8,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Audi',
+      image: Car9,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Dodge',
+      image: Car10,
+      gear: 'Automatic',
+      date: 2024,
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
+      trending: false,
+    },
+    {
+      name: 'Volkswagen',
+      image: Car11,
       gear: 'Automatic',
       date: 2024,
       gas: 'Petrol',
