@@ -10,7 +10,6 @@ body,
 }
 .center-text {
   text-align: center;
-  background-color: gray;
 }
 .white-text {
   color: white;
@@ -54,19 +53,46 @@ body,
   cursor: pointer;
 }
 .contentContainer {
-  margin: 140px auto;
+  margin: 64px auto;
   width: 80%;
   display: flex;
+  flex-wrap: wrap;
 }
-.shopFilterPanel {
-  padding: 64px 0;
+.carCardContainer {
+  display: flex;
+  justify-content: center;
+}
+.carmodelImage {
+  position: relative;
+  height: 250px;
+}
+
+.carmodelTitle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  padding: 4px;
+  color: white;
+}
+.carCardImage {
+  position: relative;
+  width: 100%;
+  margin: 20px;
+  height: 250px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.carCardImage:hover {
+  transform: scale(1.1, 1.1);
 }
 .shopCards {
   margin: 12px 0 12px 12px;
   display: flex;
 }
 .shopImage {
-  height: 212px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
@@ -82,29 +108,13 @@ body,
   align-items: flex-end;
   padding: 6px 0 0 0;
 }
-.buildbutton {
-  width: 120px;
-  display: block;
-  margin-left: auto;
-}
-.tredingBanner {
-  position: absolute;
-  background-color: dodgerblue;
-  padding: 8px 24px;
-  color: white;
-  z-index: 0;
-}
-.filtercard {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  padding: 16px 36px 16px 0;
-  justify-content: space-between;
-  cursor: pointer;
-}
+
 .carImagePreivewContainer {
   background-color: red;
-  height: 50vh;
+  height: 66.5vh;
+}
+.selectionInfoText {
+  color: #888;
 }
 .addtokitcontainer {
   margin: 0 8px;

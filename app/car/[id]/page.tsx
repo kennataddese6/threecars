@@ -1,183 +1,188 @@
-'use client';
-import Image from 'next/image';
-import Car1 from '@/assets/Car1.webp';
-import Car2 from '@/assets/Car2.webp';
-import Car3 from '@/assets/Car3.webp';
-import Car4 from '@/assets/Car4.webp';
-import Car5 from '@/assets/Car5.webp';
-import Car6 from '@/assets/Car6.webp';
-import Car7 from '@/assets/Car7.webp';
-import Car8 from '@/assets/Car8.webp';
-import Car9 from '@/assets/Car9.webp';
-import Car10 from '@/assets/Car10.webp';
-import Car11 from '@/assets/Car11.webp';
-import Light1 from '@/assets/light1.webp';
-import Light2 from '@/assets/light2.webp';
-import Light3 from '@/assets/light3.webp';
-import Light4 from '@/assets/light4.webp';
-import Light5 from '@/assets/light5.webp';
-import { FaPlus, FaMinus } from 'react-icons/fa';
-import { useEffect, useState } from 'react';
-import Popup from '@/components/Popup';
-import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+"use client";
+import Image from "next/image";
+import Car1 from "@/assets/Car1.webp";
+import Car2 from "@/assets/Car2.webp";
+import Car3 from "@/assets/Car3.webp";
+import Car4 from "@/assets/Car4.webp";
+import Car5 from "@/assets/Car5.webp";
+import Car6 from "@/assets/Car6.webp";
+import Car7 from "@/assets/Car7.webp";
+import Car8 from "@/assets/Car8.webp";
+import Car9 from "@/assets/Car9.webp";
+import Car10 from "@/assets/Car10.webp";
+import Car11 from "@/assets/Car11.webp";
+import Light1 from "@/assets/light1.webp";
+import Light2 from "@/assets/light2.webp";
+import Light3 from "@/assets/light3.webp";
+import Light4 from "@/assets/light4.webp";
+import Light5 from "@/assets/light5.webp";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import Popup from "@/components/Popup";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 interface Paramter {
   id: number;
 }
 export default function BuildCarkit({ params }: { params: Paramter }) {
   const [choices, setChoices] = useState<number[]>([]);
-  const [email, setEmail] = useState<String>('');
+  const [email, setEmail] = useState<String>("");
   const [popupView, setPopupView] = useState<Boolean>(false);
 
   const headerListItems = [
-    'Build you kit',
-    'Latest deals',
-    'Shop',
-    'Why choose us',
+    "Build you kit",
+    "Latest deals",
+    "Shop",
+    "Why choose us",
   ];
 
   const carList = [
     {
-      name: 'Lexus',
+      name: "Lexus",
       image: Car1,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2019,
-      gas: 'Petrol',
-      color: 'Blue',
-      miles: '240 Km/h',
+      gas: "Petrol",
+      color: "Blue",
+      miles: "240 Km/h",
       trending: true,
     },
     {
-      name: 'RAM',
+      name: "RAM",
       image: Car2,
-      gear: 'Manual',
+      gear: "Manual",
       date: 2023,
-      gas: 'Diesel',
-      color: 'Red',
-      miles: '320 Km/h',
+      gas: "Diesel",
+      color: "Red",
+      miles: "320 Km/h",
       trending: false,
     },
     {
-      name: 'Chevrolet',
+      name: "Chevrolet",
       image: Car4,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Mazda',
+      name: "Mazda",
       image: Car3,
-      gear: 'Semiauto',
+      gear: "Semiauto",
       date: 2024,
-      gas: 'Gasoline',
-      color: 'Grey',
-      miles: '180 Km/h',
+      gas: "Gasoline",
+      color: "Grey",
+      miles: "180 Km/h",
       trending: true,
     },
     {
-      name: 'Honda',
+      name: "Honda",
       image: Car7,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Mini',
+      name: "Mini",
       image: Car5,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Subaru',
+      name: "Subaru",
       image: Car6,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Jeep',
+      name: "Jeep",
       image: Car8,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Audi',
+      name: "Audi",
       image: Car9,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Dodge',
+      name: "Dodge",
       image: Car10,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Volkswagen',
+      name: "Volkswagen",
       image: Car11,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
   ];
   const [kits, setKits] = useState([
     {
-      title: 'Demon eyes',
+      title: "Demon eyes",
       image: Light1,
-      description: 'A little description about the light',
+      description:
+        "Feature: 360° Light LED Devil Eyes. Pair LED Devil eyes Light Rings.",
       added: false,
     },
     {
-      title: 'Led Car strips',
+      title: "Led Car strips",
       image: Light2,
-      description: 'A little description about the light',
+      description:
+        "Upgrade your car aesthetic with our 2x Flexible LED Headlight Strips.",
       added: false,
     },
     {
-      title: 'Projector retrofit',
+      title: "Projector retrofit",
       image: Light3,
-      description: 'A little description about the light',
+      description:
+        "Buy iJDMTOY Mini 3-Inch JDM Q45 Style Multi-Lens 25W LED Projector Kit ... ",
       added: false,
     },
     {
-      title: 'Halos',
+      title: "Halos",
       image: Light4,
-      description: 'A little description about the light',
+      description:
+        "For Dodge Challenger 2008-2014. Cotton light angel eyes cover is milk white, ligh...",
       added: false,
     },
     {
-      title: 'Engraving lenses',
+      title: "Engraving lenses",
       image: Light5,
-      description: 'A little description about the light',
+      description:
+        "The E-TECH Lens Tint is a revolutionary light lens tinting product that has been  ...",
       added: false,
     },
   ]);
@@ -193,7 +198,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
     setKits(updatedKits);
   };
   const handleMinus = (index: number) => {
-    setChoices(choices.filter(choice => choice !== index));
+    setChoices(choices.filter((choice) => choice !== index));
     const updatedKits = [...kits];
 
     updatedKits[index] = {
@@ -209,16 +214,16 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
   };
   const handleRequestOrder = () => {
     if (!email) {
-      toast.error('Enter you email');
+      toast.error("Enter you email");
       return;
     }
     const list = `<ul> ${choices.map(
-      choice => `<li>${kits[choice].title}</li>`,
+      (choice) => `<li>${kits[choice].title}</li>`
     )}
       </ul>
     `;
     var templateParams = {
-      title: 'You have an order',
+      title: "You have an order",
       email: process.env.NEXT_PUBLIC_RECIEVER,
       description: `${email} has requested order for the following items for the car model ${
         carList[params.id].name
@@ -231,24 +236,24 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       emailjs
         .send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
-          'verfication_link',
+          "verfication_link",
           templateParams,
           {
             publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
-          },
+          }
         )
         .then(
-          response => {
-            toast.success('Your order is sent');
-            setEmail('');
+          (response) => {
+            toast.success("Your order is sent");
+            setEmail("");
             setChoices([]);
           },
-          error => {
-            toast.error('Sending order failed');
-          },
+          (error) => {
+            toast.error("Sending order failed");
+          }
         );
     } else {
-      toast.error('Inalid configuration');
+      toast.error("Inalid configuration");
     }
     setPopupView(false);
   };
@@ -290,42 +295,9 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
               className="carpreivewbuildkit"
             ></Image>
           </div>
-          <div className="choiceContainer">
-            {choices.length
-              ? choices.map((choice, index) => (
-                  <div className="choiceItemContainer col-lg-3" key={index}>
-                    <Image
-                      src={kits[choice].image}
-                      alt="Car 1"
-                      className="carpreivewbuildkit"
-                    ></Image>
-                  </div>
-                ))
-              : ''}
-            {choices.length ? (
-              choices.length % 4 ? (
-                <button
-                  className="btn btn-warning requestorderbutton"
-                  onClick={() => handleOrder()}
-                >
-                  Request an order
-                </button>
-              ) : (
-                <button
-                  className="btn btn-warning requestorderbutton"
-                  style={{ marginLeft: 'auto' }}
-                  onClick={() => handleOrder()}
-                >
-                  Request an order
-                </button>
-              )
-            ) : (
-              ''
-            )}
-          </div>
         </div>
         <div className="col-lg-4">
-          {' '}
+          {" "}
           <div className="addtokitcontainer">
             <input
               type="text"
@@ -360,11 +332,54 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
                         handleMinus(index);
                       }}
                     />
-                  )}{' '}
+                  )}{" "}
                 </div>
               </div>
             ))}
           </div>
+        </div>
+        <div className="choiceContainer col-lg-8">
+          {choices.length ? (
+            choices.map((choice, index) => (
+              <div className="choiceItemContainer col-lg-3" key={index}>
+                <Image
+                  src={kits[choice].image}
+                  alt="Car 1"
+                  className="carpreivewbuildkit"
+                ></Image>
+              </div>
+            ))
+          ) : (
+            <h6
+              className="center-text selectionInfoText"
+              style={{
+                width: "100%",
+                padding: "60px 0",
+              }}
+            >
+              Nothing added yet!
+            </h6>
+          )}
+          {choices.length ? (
+            choices.length % 4 ? (
+              <button
+                className="btn btn-warning requestorderbutton"
+                onClick={() => handleOrder()}
+              >
+                Request an order
+              </button>
+            ) : (
+              <button
+                className="btn btn-warning requestorderbutton"
+                style={{ marginLeft: "auto" }}
+                onClick={() => handleOrder()}
+              >
+                Request an order
+              </button>
+            )
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </>
