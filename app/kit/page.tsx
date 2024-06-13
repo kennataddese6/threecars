@@ -12,10 +12,6 @@ import Car8 from "@/assets/Car8.webp";
 import Car9 from "@/assets/Car9.webp";
 import Car10 from "@/assets/Car10.webp";
 import Car11 from "@/assets/Car11.webp";
-import { FaGear, FaGasPump } from "react-icons/fa6";
-import { FaTachometerAlt } from "react-icons/fa";
-import { MdDateRange } from "react-icons/md";
-import { IoIosColorPalette, IoIosArrowForward } from "react-icons/io";
 export default function Car() {
   const headerListItems = [
     "Build you kit",
@@ -137,7 +133,7 @@ export default function Car() {
   ];
   const router = useRouter();
   const handleClick = (id: number) => {
-    router.push(`/car/${id}`);
+    router.push(`/kit/${id}`);
   };
   return (
     <>

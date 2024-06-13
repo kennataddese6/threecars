@@ -1,15 +1,34 @@
+"use client";
 import "./globals.css";
 import FirstImage from "@/assets/FirstImage.webp";
 import SecondImage from "@/assets/SecondImage.webp";
 import ThirdImage from "@/assets/ThirdImage.webp";
 import FourthImage from "@/assets/FourthImage.webp";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 export default function Home() {
+  const router = useRouter();
   const headerListItems = [
-    "Home",
-    "Make your own kit",
-    "Parts for sale",
-    "Our services",
+    {
+      name: "Home",
+      active: true,
+      des: "/",
+    },
+    {
+      name: "Make your own kit",
+      active: true,
+      des: "/kit",
+    },
+    {
+      name: "Parts for sale",
+      active: true,
+      des: "/",
+    },
+    {
+      name: "Our services",
+      active: true,
+      des: "/",
+    },
   ];
   return (
     <>
@@ -18,8 +37,12 @@ export default function Home() {
           <div className="logoContainer col-lg-3">MT Lights</div>
           <ul className="headerList col-lg-8 col-xl-6">
             {headerListItems.map((item, index) => (
-              <li key={index} className="headerItem">
-                {item}
+              <li
+                key={index}
+                className="headerItem"
+                onClick={() => router.push(item.des)}
+              >
+                {item.name}
               </li>
             ))}
           </ul>
