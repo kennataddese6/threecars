@@ -59,7 +59,7 @@ export default function Home() {
         <h1 className="white-text center-text landingpageHeaderText">
           Brighten the darkness with intense LED headlights and imprint a
           memorable signature with stylishly designed taillights. Boost your
-          automobile's outdoor illumination for unequaled clarity and class.
+          automobile{"'"}s outdoor illumination for unequaled clarity and class.
         </h1>
 
         <Image
