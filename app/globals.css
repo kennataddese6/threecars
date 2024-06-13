@@ -195,3 +195,47 @@ body,
   margin-top: 6px;
   height: 50px;
 }
+.LandingpageImageone {
+  width: 70%;
+  height: 100%;
+  display: block;
+  margin: 16px auto;
+}
+.firstServiceContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.landingpageHeaderText {
+  font-size: 2.9rem;
+}
+.customHeadlightsParagraph {
+  font-size: 2rem;
+  width: 96%;
+  text-align: justify;
+}
+.footerOne {
+  background-color: white;
+  padding: 16px 0 32px 0;
+}
+.contactUsFormContainer {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contactinputs {
+  background-color: rgb(239, 239, 239);
+  border: none;
+  outline: none;
+  padding: 10px 6px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+.copyRightFooter {
+  background-color: #272626;
+  padding: 16px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
