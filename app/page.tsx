@@ -16,17 +16,17 @@ export default function Home() {
     },
     {
       name: "Make your own kit",
-      active: true,
+      active: false,
       des: "/kit",
     },
     {
       name: "Parts for sale",
-      active: true,
+      active: false,
       des: "/",
     },
     {
       name: "Our services",
-      active: true,
+      active: false,
       des: "/",
     },
   ];
@@ -39,7 +39,9 @@ export default function Home() {
             {headerListItems.map((item, index) => (
               <li
                 key={index}
-                className="headerItem"
+                className={
+                  item.active ? `headerItemActive headerItem` : ` headerItem`
+                }
                 onClick={() => router.push(item.des)}
               >
                 {item.name}
