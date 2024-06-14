@@ -85,7 +85,12 @@ export default function Home() {
           <Image
             src={SecondImage}
             alt="Second Image"
-            style={{ borderRadius: "16px", width: "90%", objectFit: "cover" }}
+            style={{
+              borderRadius: "16px",
+              width: "90%",
+              height: "60vh",
+              objectFit: "cover",
+            }}
           />
         </div>
         <div className="col-lg-6 firstServiceContainer">
@@ -110,7 +115,12 @@ export default function Home() {
           <Image
             src={ThirdImage}
             alt="Second Image"
-            style={{ borderRadius: "16px", width: "90%", objectFit: "cover" }}
+            style={{
+              borderRadius: "16px",
+              width: "100%",
+              height: "60vh",
+              objectFit: "cover",
+            }}
           />
         </div>
       </div>
@@ -120,7 +130,12 @@ export default function Home() {
           <Image
             src={FourthImage}
             alt="Second Image"
-            style={{ borderRadius: "16px", width: "90%", objectFit: "cover" }}
+            style={{
+              borderRadius: "16px",
+              width: "90%",
+              height: "60vh",
+              objectFit: "cover",
+            }}
           />
         </div>
         <div className="col-lg-6 firstServiceContainer">
