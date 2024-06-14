@@ -178,7 +178,7 @@ export default function Car() {
       </div>
       <div>
         <h6
-          style={{ color: "white", marginTop: "154px" }}
+          style={{ color: "white", marginTop: "32px" }}
           className="center-text"
         >
           Choose you car model
