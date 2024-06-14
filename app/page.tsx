@@ -6,6 +6,7 @@ import ThirdImage from "@/assets/ThirdImage.webp";
 import FourthImage from "@/assets/FourthImage.webp";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { motion } from "framer-motion";
 export default function Home() {
   const router = useRouter();
   const headerListItems = [
@@ -54,7 +55,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="contentContainer col-lg-11 col-xl-9">
+      <motion.div
+        className="contentContainer col-lg-11 col-xl-9"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.1, ease: "easeInOut" }}
+      >
         <h1 className="white-text center-text landingpageHeaderText">
           Brighten the darkness with intense LED headlights and imprint a
           memorable signature with stylishly designed taillights. Boost your
@@ -67,7 +73,7 @@ export default function Home() {
           className="LandingpageImageone"
         />
         <br />
-      </div>
+      </motion.div>
       <div className="contentContainer col-lg-11 col-xl-9">
         <h1
           className="white-text center-text landingpageHeaderText"
@@ -76,7 +82,12 @@ export default function Home() {
           Our services
         </h1>
       </div>
-      <div className="contentContainer col-lg-11 col-xl-9">
+      <motion.div
+        className="contentContainer col-lg-11 col-xl-9"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
+      >
         <div className="col-lg-6">
           {" "}
           <Image
@@ -97,8 +108,13 @@ export default function Home() {
             highlight its shape, making it impossible to ignore.
           </p>
         </div>
-      </div>
-      <div className="contentContainer col-lg-11 col-xl-9">
+      </motion.div>
+      <motion.div
+        className="contentContainer col-lg-11 col-xl-9"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
+      >
         <div className="col-lg-6 firstServiceContainer">
           {" "}
           <h1 className="white-text">Custom backlights</h1>
@@ -120,8 +136,13 @@ export default function Home() {
             }}
           />
         </div>
-      </div>
-      <div className="contentContainer col-lg-11 col-xl-9">
+      </motion.div>
+      <motion.div
+        className="contentContainer col-lg-11 col-xl-9"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
+      >
         <div className="col-lg-6">
           {" "}
           <Image
@@ -142,7 +163,7 @@ export default function Home() {
             taste, making every drive a testament to your personal style.
           </p>
         </div>
-      </div>
+      </motion.div>
       <div className="footerOne">
         <h1 className="center-text" style={{ marginTop: "24px" }}>
           Get in touch with us
