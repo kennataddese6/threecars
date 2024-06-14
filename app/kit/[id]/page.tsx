@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Car1 from "@/assets/Car1.webp";
 import Car2 from "@/assets/Car2.webp";
@@ -29,12 +30,29 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
   const [choices, setChoices] = useState<number[]>([]);
   const [email, setEmail] = useState<String>("");
   const [popupView, setPopupView] = useState<Boolean>(false);
+  const router = useRouter();
 
   const headerListItems = [
-    "Build you kit",
-    "Latest deals",
-    "Shop",
-    "Why choose us",
+    {
+      name: "Home",
+      active: false,
+      des: "/",
+    },
+    {
+      name: "Make your own kit",
+      active: true,
+      des: "/kit",
+    },
+    {
+      name: "Parts for sale",
+      active: false,
+      des: "/",
+    },
+    {
+      name: "Our services",
+      active: false,
+      des: "/",
+    },
   ];
 
   const carList = [
@@ -272,17 +290,23 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       {/* Header */}
       <div className="headerContainer col-lg-12">
         <div className="headerSubContainer col-lg-11 col-xl-9">
-          <div className="logoContainer col-lg-3">BRANDNAME</div>
-          <ul className="headerList col-lg-6">
+          <div className="logoContainer col-lg-3">MT Lights</div>
+          <ul className="headerList col-lg-8 col-xl-6">
             {headerListItems.map((item, index) => (
-              <li key={index} className="headerItem">
-                {item}
+              <li
+                key={index}
+                className={
+                  item.active ? `headerItemActive headerItem` : ` headerItem`
+                }
+                onClick={() => router.push(item.des)}
+              >
+                {item.name}
               </li>
             ))}
           </ul>
           <div className="rightheader col-xl-3">
-            <button className="signinbtn">Sign in</button>
-            <button className="btn btn-primary">Sign up</button>
+            {/* <button className="signinbtn">Sign in</button> */}
+            <button className="btn btn-primary">Sign in</button>
           </div>
         </div>
       </div>
