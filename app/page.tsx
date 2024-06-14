@@ -54,10 +54,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div
-        className="contentContainer col-lg-11 col-xl-9"
-        style={{ marginTop: "162px" }}
-      >
+      <div className="contentContainer col-lg-11 col-xl-9">
         <h1 className="white-text center-text landingpageHeaderText">
           Brighten the darkness with intense LED headlights and imprint a
           memorable signature with stylishly designed taillights. Boost your
