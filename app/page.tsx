@@ -28,7 +28,7 @@ export default function Home() {
     {
       name: "Our services",
       active: false,
-      des: "/",
+      des: "#service",
     },
   ];
   return (
@@ -74,7 +74,7 @@ export default function Home() {
         />
         <br />
       </motion.div>
-      <div className="contentContainer col-lg-11 col-xl-9">
+      <div className="contentContainer col-lg-11 col-xl-9" id="service">
         <h1
           className="white-text center-text landingpageHeaderText"
           style={{ width: "100%" }}
