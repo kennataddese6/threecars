@@ -171,8 +171,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
     {
       title: "Demon eyes",
       image: Light1,
-      description:
-        "Feature: 360° Light LED Devil Eyes. Pair LED Devil eyes Light Rings.",
+      description: "Pair LED Devil eyes Light Rings.",
       added: false,
     },
     {
