@@ -156,7 +156,7 @@ export default function Car() {
       {/* Header */}
       <div className="headerContainer col-lg-12">
         <div className="headerSubContainer col-lg-11 col-xl-9">
-          <div className="logoContainer col-lg-3">MT Lights</div>
+          <div className="logoContainer col-lg-3">MT CUSTOM LIGHTS</div>
           <ul className="headerList col-lg-8 col-xl-6">
             {headerListItems.map((item, index) => (
               <li
