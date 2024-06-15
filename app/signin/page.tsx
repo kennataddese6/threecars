@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,9 +7,10 @@ import "react-toastify/dist/ReactToastify.css";
 export default function Sigin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
   const handleClick = () => {
     if (email === "JohnDoe@gmail.com" && password == "123456") {
-      toast.success("Success");
+      router.push("/add");
     } else {
       toast.error("Incorrect email or passowrd!");
     }
