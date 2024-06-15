@@ -1,4 +1,5 @@
 "use client";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import FirstImage from "@/assets/FirstImage.webp";
 import SecondImage from "@/assets/SecondImage.webp";
@@ -8,6 +9,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
+
 export default function Home() {
   const router = useRouter();
   const headerListItems = [
