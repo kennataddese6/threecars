@@ -171,35 +171,36 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
     {
       title: "Demon eyes",
       image: Light1,
-      description: "Pair LED Devil eyes Light Rings.",
+      description:
+        "Add RGB leds in your projectors to make those eyes look like evil.",
       added: false,
     },
     {
       title: "Led Car strips",
       image: Light2,
       description:
-        "Upgrade your car aesthetic with our 2x Flexible LED Headlight Strips.",
+        "Add RGB or White/Amber strip surround the edges to increase the style",
       added: false,
     },
     {
       title: "Projector retrofit",
       image: Light3,
       description:
-        "Buy iJDMTOY Mini 3-Inch JDM Q45 Style Multi-Lens 25W LED Projector Kit ... ",
+        "Add projectors to have more light output on nocturnal rides. Create a better style as well",
       added: false,
     },
     {
       title: "Halos",
       image: Light4,
       description:
-        "For Dodge Challenger 2008-2014. Cotton light angel eyes cover is milk white, ligh...",
+        "Add RGB, RGBW or White/Amber halos on the projectors shrouds to increase the style",
       added: false,
     },
     {
       title: "Engraving lenses",
       image: Light5,
       description:
-        "The E-TECH Lens Tint is a revolutionary light lens tinting product that has been  ...",
+        "Custom made design or logo engraved in your projectors lenses",
       added: false,
     },
   ]);
