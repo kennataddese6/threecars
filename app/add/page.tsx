@@ -9,11 +9,16 @@ export default function Add() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState<string | undefined>();
+
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {
-      const imageUrl = URL.createObjectURL(selectedFile);
-      setImage(imageUrl);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64Image = reader.result as string;
+        setImage(base64Image);
+      };
+      reader.readAsDataURL(selectedFile);
     }
   };
 
@@ -33,6 +38,9 @@ export default function Add() {
       updatedData = [data];
     }
     localStorage.setItem("sale", JSON.stringify(updatedData));
+    setTitle("");
+    setPrice("");
+    setDescription("");
     toast.success("Success");
   };
   return (
@@ -46,6 +54,7 @@ export default function Add() {
             className="contactinputs"
             placeholder="Title"
             onChange={(e) => setTitle(e.target.value)}
+            value={title}
           />{" "}
           <br />
           <input
@@ -53,6 +62,7 @@ export default function Add() {
             className="contactinputs"
             placeholder="$"
             onChange={(e) => setPrice(e.target.value)}
+            value={price}
           />{" "}
           <br />
           <textarea
@@ -61,6 +71,7 @@ export default function Add() {
             autoComplete="on"
             onChange={(e) => setDescription(e.target.value)}
             style={{ width: "230px" }}
+            value={description}
           />{" "}
           <br />
           <input

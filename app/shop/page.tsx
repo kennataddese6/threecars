@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Car1 from "@/assets/Car1.webp";
 import Car2 from "@/assets/Car2.webp";
@@ -12,6 +13,15 @@ import Car8 from "@/assets/Car8.webp";
 import Car9 from "@/assets/Car9.webp";
 import Car10 from "@/assets/Car10.webp";
 import Car11 from "@/assets/Car11.webp";
+
+interface Sale {
+  title: string;
+  image: string;
+  description: string;
+  price: number;
+  // Add other properties as needed
+}
+
 export default function Shop() {
   const headerListItems = [
     {
@@ -148,6 +158,13 @@ export default function Shop() {
     },
   ];
   const router = useRouter();
+  const [sales, setSales] = useState<Sale[]>([]);
+  useEffect(() => {
+    const data = localStorage.getItem("sale");
+    if (data) {
+      setSales(JSON.parse(data));
+    }
+  }, []);
   const handleClick = (id: number) => {
     router.push(`/kit/${id}`);
   };
@@ -175,6 +192,30 @@ export default function Shop() {
             <button className="btn btn-primary">Sign in</button>
           </div>
         </div>
+      </div>
+
+      {/* Content */}
+      <div className="contentContainer col-lg-11 col-xl-9">
+        {sales.map((sale, index) => (
+          <div className="carCardContainer col-lg-4" key={index}>
+            <div className="carCardImage">
+              {" "}
+              <Image
+                src={sale.image}
+                alt="Car image"
+                className="shopImage"
+                width={100}
+                height={100}
+              />
+              <div className="partsForSaleContainer">
+                {" "}
+                <h5 style={{ margin: 0 }}>{sale.title}</h5>{" "}
+                <p style={{ margin: 0 }}>{sale.description}</p>{" "}
+                <p style={{ margin: 0, color: "black" }}>${sale.price}</p>{" "}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
