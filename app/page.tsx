@@ -7,6 +7,7 @@ import FourthImage from "@/assets/FourthImage.webp";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { toast, ToastContainer } from "react-toastify";
 export default function Home() {
   const router = useRouter();
   const headerListItems = [
@@ -31,8 +32,22 @@ export default function Home() {
       des: "#service",
     },
   ];
+
+  const handleNavigation = (nav: String) => {
+    if (nav === "/shop") {
+      const data = localStorage.getItem("sale");
+      if (data) {
+        router.push("shop");
+      } else {
+        toast.info("Coming soon.");
+      }
+    } else {
+      router.push(`${nav}`);
+    }
+  };
   return (
     <>
+      <ToastContainer theme="dark" />
       <div className="headerContainer col-lg-12">
         <div className="headerSubContainer col-lg-11 col-xl-9">
           <div className="logoContainer col-lg-3">MT Lights</div>
@@ -43,7 +58,7 @@ export default function Home() {
                 className={
                   item.active ? `headerItemActive headerItem` : ` headerItem`
                 }
-                onClick={() => router.push(item.des)}
+                onClick={() => handleNavigation(item.des)}
               >
                 {item.name}
               </li>
