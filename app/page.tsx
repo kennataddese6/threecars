@@ -23,7 +23,7 @@ export default function Home() {
     {
       name: "Parts for sale",
       active: false,
-      des: "/",
+      des: "/shop",
     },
     {
       name: "Our services",
