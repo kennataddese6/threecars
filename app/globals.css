@@ -81,7 +81,7 @@ body,
 .carCardImage {
   position: relative;
   width: 100%;
-  margin: 20px;
+  margin: 12px 12px;
   height: 250px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
@@ -146,6 +146,7 @@ body,
   height: 100%;
   image-resolution: 50;
   object-fit: cover;
+  border-radius: 12px;
 }
 .buildkitsearchbar {
   border: none;
@@ -160,7 +161,6 @@ body,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px;
   overflow-y: auto;
 }
 .addkitImagecontainer {
@@ -266,6 +266,13 @@ body,
   .addtokitcontainer {
     height: 50vh;
   }
+  .choiceItemContainer {
+    height: 8rem;
+  }
+  .carCardImage {
+    margin: 12px 12px;
+    height: 200px;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -278,5 +285,12 @@ body,
   }
   .addtokitcontainer {
     height: 60.5vh;
+  }
+  .choiceItemContainer {
+    height: 10rem;
+  }
+  .carCardImage {
+    margin: 20px;
+    height: 250px;
   }
 }

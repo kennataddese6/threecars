@@ -177,10 +177,7 @@ export default function Car() {
         </div>
       </div>
       <div>
-        <h6
-          style={{ color: "white", marginTop: "32px" }}
-          className="center-text"
-        >
+        <h6 style={{ color: "white" }} className="center-text">
           Choose you car model
         </h6>
       </div>
@@ -188,7 +185,7 @@ export default function Car() {
       {/* Content */}
       <div className="contentContainer col-lg-11 col-xl-9">
         {carList.map((car, index) => (
-          <div className="carCardContainer col-lg-3" key={index}>
+          <div className="carCardContainer col-lg-4" key={index}>
             <div
               className="carCardImage"
               onClick={() => {
