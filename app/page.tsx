@@ -51,7 +51,12 @@ export default function Home() {
           </ul>
           <div className="rightheader col-xl-3">
             {/* <button className="signinbtn">Sign in</button> */}
-            <button className="btn btn-primary">Sign in</button>
+            <button
+              className="btn btn-primary"
+              onClick={() => router.push("/signin")}
+            >
+              Sign in
+            </button>
           </div>
         </div>
       </div>
