@@ -55,7 +55,7 @@ export default function Home() {
           <div className="logoContainer col-lg-3 roboto-regular">
             MT CUSTOM LIGHTS
           </div>
-          <ul className="headerList col-lg-8 col-xl-6">
+          <ul className="headerList col-lg-8 col-xl-7">
             {headerListItems.map((item, index) => (
               <li
                 key={index}
@@ -85,7 +85,7 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.1, ease: 'easeInOut' }}
       >
-        <h1 className="white-text center-text landingpageHeaderText play-write">
+        <h1 className="white-text center-text landingpageHeaderText zen-tokyo-zoo-regular">
           Brighten the darkness with intense LED headlights and imprint a
           memorable signature with stylishly designed taillights. Boost your
           automobile{"'"}s outdoor illumination for unequaled clarity and class.
