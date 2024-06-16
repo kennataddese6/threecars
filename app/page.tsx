@@ -1,47 +1,47 @@
-"use client";
-import "react-toastify/dist/ReactToastify.css";
-import "./globals.css";
-import FirstImage from "@/assets/FirstImage.webp";
-import SecondImage from "@/assets/SecondImage.webp";
-import ThirdImage from "@/assets/ThirdImage.webp";
-import FourthImage from "@/assets/FourthImage.webp";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { toast, ToastContainer } from "react-toastify";
+'use client';
+import 'react-toastify/dist/ReactToastify.css';
+import './globals.css';
+import FirstImage from '@/assets/FirstImage.webp';
+import SecondImage from '@/assets/SecondImage.webp';
+import ThirdImage from '@/assets/ThirdImage.webp';
+import FourthImage from '@/assets/FourthImage.webp';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function Home() {
   const router = useRouter();
   const headerListItems = [
     {
-      name: "Home",
+      name: 'Home',
       active: true,
-      des: "/",
+      des: '/',
     },
     {
-      name: "Make your own kit",
+      name: 'Make your own kit',
       active: false,
-      des: "/kit",
+      des: '/kit',
     },
     {
-      name: "Parts for sale",
+      name: 'Parts for sale',
       active: false,
-      des: "/shop",
+      des: '/shop',
     },
     {
-      name: "Our services",
+      name: 'Our services',
       active: false,
-      des: "#service",
+      des: '#service',
     },
   ];
 
   const handleNavigation = (nav: String) => {
-    if (nav === "/shop") {
-      const data = localStorage.getItem("sale");
+    if (nav === '/shop') {
+      const data = localStorage.getItem('sale');
       if (data) {
-        router.push("shop");
+        router.push('shop');
       } else {
-        toast.info("Coming soon.");
+        toast.info('Coming soon.');
       }
     } else {
       router.push(`${nav}`);
@@ -52,7 +52,9 @@ export default function Home() {
       <ToastContainer theme="dark" />
       <div className="headerContainer col-lg-12">
         <div className="headerSubContainer col-lg-11 col-xl-9">
-          <div className="logoContainer col-lg-3">MT CUSTOM LIGHTS</div>
+          <div className="logoContainer col-lg-3 roboto-regular">
+            MT CUSTOM LIGHTS
+          </div>
           <ul className="headerList col-lg-8 col-xl-6">
             {headerListItems.map((item, index) => (
               <li
@@ -70,7 +72,7 @@ export default function Home() {
             {/* <button className="signinbtn">Sign in</button> */}
             <button
               className="btn btn-primary"
-              onClick={() => router.push("/signin")}
+              onClick={() => router.push('/signin')}
             >
               Sign in
             </button>
@@ -81,9 +83,9 @@ export default function Home() {
         className="contentContainer col-lg-11 col-xl-9"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.1, ease: "easeInOut" }}
+        transition={{ duration: 1, delay: 0.1, ease: 'easeInOut' }}
       >
-        <h1 className="white-text center-text landingpageHeaderText">
+        <h1 className="white-text center-text landingpageHeaderText play-write">
           Brighten the darkness with intense LED headlights and imprint a
           memorable signature with stylishly designed taillights. Boost your
           automobile{"'"}s outdoor illumination for unequaled clarity and class.
@@ -97,35 +99,38 @@ export default function Home() {
         <br />
       </motion.div>
       <div className="contentContainer col-lg-11 col-xl-9" id="service">
-        <h1
-          className="white-text center-text landingpageHeaderText"
-          style={{ width: "100%" }}
+        <motion.h1
+          className="white-text center-text landingpageHeaderText roboto-regular"
+          style={{ width: '100%' }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.1, ease: 'easeInOut' }}
         >
           Our services
-        </h1>
+        </motion.h1>
       </div>
       <motion.div
         className="contentContainer col-lg-11 col-xl-9"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
+        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
       >
         <div className="col-lg-6">
-          {" "}
+          {' '}
           <Image
             src={SecondImage}
             alt="Second Image"
             style={{
-              borderRadius: "16px",
-              width: "90%",
-              height: "60vh",
-              objectFit: "cover",
+              borderRadius: '16px',
+              width: '90%',
+              height: '60vh',
+              objectFit: 'cover',
             }}
           />
         </div>
         <div className="col-lg-6 firstServiceContainer">
-          <h1 className="white-text">Custom Headlights</h1>
-          <p className="customHeadlightsParagraph">
+          <h1 className="white-text play-write">Custom Headlights</h1>
+          <p className="customHeadlightsParagraph inconsolata">
             See your car become the star of the show with lights that perfectly
             highlight its shape, making it impossible to ignore.
           </p>
@@ -135,12 +140,12 @@ export default function Home() {
         className="contentContainer col-lg-11 col-xl-9"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
+        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
       >
         <div className="col-lg-6 firstServiceContainer">
-          {" "}
-          <h1 className="white-text">Custom backlights</h1>
-          <p className="customHeadlightsParagraph">
+          {' '}
+          <h1 className="white-text play-write">Custom backlights</h1>
+          <p className="customHeadlightsParagraph inconsolata">
             Imagine your car’s tail lights drawing every eye, their radiant glow
             highlighting its sleek lines and bold design, ensuring everyone
             remembers your departure.
@@ -151,10 +156,10 @@ export default function Home() {
             src={ThirdImage}
             alt="Second Image"
             style={{
-              borderRadius: "16px",
-              width: "100%",
-              height: "60vh",
-              objectFit: "cover",
+              borderRadius: '16px',
+              width: '100%',
+              height: '60vh',
+              objectFit: 'cover',
             }}
           />
         </div>
@@ -163,31 +168,31 @@ export default function Home() {
         className="contentContainer col-lg-11 col-xl-9"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
+        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
       >
         <div className="col-lg-6">
-          {" "}
+          {' '}
           <Image
             src={FourthImage}
             alt="Second Image"
             style={{
-              borderRadius: "16px",
-              width: "90%",
-              height: "60vh",
-              objectFit: "cover",
+              borderRadius: '16px',
+              width: '90%',
+              height: '60vh',
+              objectFit: 'cover',
             }}
           />
         </div>
         <div className="col-lg-6 firstServiceContainer">
-          <h1 className="white-text">Make your own kit</h1>
-          <p className="customHeadlightsParagraph">
+          <h1 className="white-text play-write">Make your own kit</h1>
+          <p className="customHeadlightsParagraph inconsolata">
             With our customizable options, your car will reflect your distinct
             taste, making every drive a testament to your personal style.
           </p>
         </div>
       </motion.div>
       <div className="footerOne">
-        <h1 className="center-text" style={{ marginTop: "24px" }}>
+        <h1 className="center-text play-write" style={{ marginTop: '24px' }}>
           Get in touch with us
         </h1>
         <div className="contactUsFormContainer col-lg-3">
@@ -195,11 +200,11 @@ export default function Home() {
           <input type="text" placeholder="Email" className="contactinputs" />
           <textarea
             placeholder="Message"
-            style={{ width: "100%", height: "128px" }}
+            style={{ width: '100%', height: '128px' }}
             className="contactinputs"
           />
           <button
-            style={{ width: "100%", padding: "8px 0", marginTop: "6px" }}
+            style={{ width: '100%', padding: '8px 0', marginTop: '6px' }}
             className="btn btn-dark"
           >
             Get in touch with us
