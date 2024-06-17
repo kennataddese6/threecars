@@ -42,32 +42,27 @@ body,
 .headerContainer {
   position: sticky;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(16px);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
   z-index: 1;
 }
 .headerSubContainer {
   margin: auto;
   padding: 1.5em 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .headerList {
   list-style-type: none;
   color: white;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
   margin: 0;
+  padding: 1em 0;
 }
 .logoContainer {
+  margin: 0 1.5em;
   color: dodgerblue;
 }
 .rightheader {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  margin: 0.5em 1.5em;
 }
 .signinbtn {
   color: white;
@@ -75,8 +70,13 @@ body,
   border: none;
   margin-right: 16px;
 }
+.headerItem {
+  margin: 2em 0;
+  padding: 0.5em 1.5em;
+}
 .headerItem:hover {
-  color: dodgerblue;
+  background-color: dodgerblue;
+  color: white;
   cursor: pointer;
 }
 .headerItemActive {
@@ -314,6 +314,34 @@ body,
   .carCardImage {
     margin: 12px 12px;
     height: 200px;
+  }
+  .headerContainer {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(16px);
+    padding: 0;
+  }
+  .headerSubContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  .headerList {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .rightheader {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .headerItem {
+    margin: 1.5em 0;
   }
 }
 
