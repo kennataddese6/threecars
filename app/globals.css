@@ -351,6 +351,7 @@ body,
   }
   .headerItem {
     margin: 1.5em 0;
+    padding: 0;
   }
   .headerItem:hover {
     color: dodgerblue;
@@ -358,6 +359,9 @@ body,
   }
   #menuicon {
     display: none;
+  }
+  .logoContainer {
+    margin: 2em 0;
   }
 }
 
