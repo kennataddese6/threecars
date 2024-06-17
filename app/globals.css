@@ -60,6 +60,7 @@ body,
 .logoContainer {
   margin: 0 1.5em;
   color: dodgerblue;
+  cursor: pointer;
 }
 .rightheader {
   margin: 0.5em 1.5em;
@@ -342,6 +343,10 @@ body,
   }
   .headerItem {
     margin: 1.5em 0;
+  }
+  .headerItem:hover {
+    color: dodgerblue;
+    background-color: transparent;
   }
 }
 
