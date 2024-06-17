@@ -56,14 +56,22 @@ body,
   align-items: center;
   margin: 0;
   padding: 1em 0;
+  display: none;
 }
 .logoContainer {
   margin: 0 1.5em;
   color: dodgerblue;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#menuicon {
+  display: block;
 }
 .rightheader {
   margin: 0.5em 1.5em;
+  display: none;
 }
 .signinbtn {
   color: white;
@@ -347,6 +355,9 @@ body,
   .headerItem:hover {
     color: dodgerblue;
     background-color: transparent;
+  }
+  #menuicon {
+    display: none;
   }
 }
 

@@ -9,7 +9,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
-
+import { MdClose } from "react-icons/md";
+import { MdMenu } from "react-icons/md";
 export default function Home() {
   const router = useRouter();
   const headerListItems = [
@@ -34,7 +35,30 @@ export default function Home() {
       des: "#service",
     },
   ];
+  const getElement = (id: string) => {
+    return document.getElementById(id);
+  };
 
+  const setDisplay = (elementId: string, displayValue: string) => {
+    const element = getElement(elementId);
+    if (element) {
+      element.style.display = displayValue;
+    }
+  };
+
+  const disableHeaders = () => {
+    setDisplay("header", "none");
+    setDisplay("headerright", "none");
+    setDisplay("closeicon", "none");
+    setDisplay("menuicon", "block");
+  };
+
+  const enableHeader = () => {
+    setDisplay("header", "block");
+    setDisplay("headerright", "block");
+    setDisplay("closeicon", "block");
+    setDisplay("menuicon", "none");
+  };
   const handleNavigation = (nav: String) => {
     if (nav === "/shop") {
       const data = localStorage.getItem("sale");
@@ -54,8 +78,21 @@ export default function Home() {
         <div className="headerSubContainer col-lg-11 col-xl-9">
           <div className="logoContainer col-lg-3 roboto-regular">
             MT CUSTOM LIGHTS
+            <MdClose
+              color="white"
+              fontSize={"1.5rem"}
+              onClick={disableHeaders}
+              id="closeicon"
+              style={{ display: "none" }}
+            />
+            <MdMenu
+              color="white"
+              fontSize={"1.5rem"}
+              onClick={enableHeader}
+              id="menuicon"
+            />
           </div>
-          <ul className="headerList col-lg-8 col-xl-6">
+          <ul className="headerList col-lg-8 col-xl-6" id="header">
             {headerListItems.map((item, index) => (
               <li
                 key={index}
@@ -68,7 +105,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <div className="rightheader col-xl-3">
+          <div className="rightheader col-xl-3" id="headerright">
             <button
               className="btn btn-primary"
               onClick={() => router.push("/signin")}
