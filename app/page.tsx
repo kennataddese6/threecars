@@ -39,27 +39,35 @@ export default function Home() {
     return document.getElementById(id);
   };
 
-  const setDisplay = (elementId: string, displayValue: string) => {
+  const setDisplay = (
+    elementId: string,
+    displayValue: string,
+    height: string
+  ) => {
     const element = getElement(elementId);
     if (element) {
       element.style.display = displayValue;
+      element.style.height = height;
     }
   };
 
   const disableHeaders = () => {
-    setDisplay("header", "none");
-    setDisplay("headerright", "none");
-    setDisplay("closeicon", "none");
-    setDisplay("menuicon", "block");
+    setDisplay("header", "none", "auto");
+    setDisplay("headerright", "none", "auto");
+    setDisplay("closeicon", "none", "auto");
+    setDisplay("menuicon", "block", "auto");
+    setDisplay("headerContainer", "block", "auto");
   };
 
   const enableHeader = () => {
-    setDisplay("header", "block");
-    setDisplay("headerright", "block");
-    setDisplay("closeicon", "block");
-    setDisplay("menuicon", "none");
+    setDisplay("header", "block", "auto");
+    setDisplay("headerright", "block", "auto");
+    setDisplay("closeicon", "block", "auto");
+    setDisplay("menuicon", "none", "auto");
+    setDisplay("headerContainer", "block", "100vh");
   };
   const handleNavigation = (nav: String) => {
+    disableHeaders();
     if (nav === "/shop") {
       const data = localStorage.getItem("sale");
       if (data) {
@@ -74,7 +82,7 @@ export default function Home() {
   return (
     <>
       <ToastContainer theme="dark" />
-      <div className="headerContainer col-lg-12">
+      <div className="headerContainer col-lg-12" id="headerContainer">
         <div className="headerSubContainer col-lg-11 col-xl-9">
           <div className="logoContainer col-lg-3 roboto-regular">
             MT CUSTOM LIGHTS

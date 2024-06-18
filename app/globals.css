@@ -383,4 +383,7 @@ body,
     margin: 20px;
     height: 250px;
   }
+  #menuicon {
+    display: none;
+  }
 }
