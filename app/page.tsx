@@ -3,7 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import FirstImage from "@/assets/FirstImage.webp";
 import SecondImage from "@/assets/SecondImage.webp";
-import ThirdImage from "@/assets/ThirdImage.webp";
+import ThirdImage from "@/assets/ThirdImage.png";
 import FourthImage from "@/assets/FourthImage.webp";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -87,14 +87,14 @@ export default function Home() {
           <div className="logoContainer col-lg-3 roboto-regular">
             MT CUSTOM LIGHTS
             <MdClose
-              color="white"
+              color="black"
               fontSize={"1.5rem"}
               onClick={disableHeaders}
               id="closeicon"
               style={{ display: "none" }}
             />
             <MdMenu
-              color="white"
+              color="black"
               fontSize={"1.5rem"}
               onClick={enableHeader}
               id="menuicon"
@@ -123,63 +123,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <motion.div
-        className="contentContainer col-lg-11 col-xl-9"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.1, ease: "easeInOut" }}
-      >
-        <h1 className="white-text center-text landingpageHeaderText zen-tokyo-zoo-regular">
-          Brighten the darkness with intense LED headlights and imprint a
-          memorable signature with stylishly designed taillights. Boost your
-          automobile{"'"}s outdoor illumination for unequaled clarity and class.
-        </h1>
 
-        <Image
-          src={FirstImage}
-          alt="Landing page Image"
-          className="LandingpageImageone"
-        />
-        <br />
-      </motion.div>
-      <div className="contentContainer col-lg-11 col-xl-9" id="service">
-        <motion.h1
-          className="white-text center-text landingpageHeaderText roboto-regular"
-          style={{ width: "100%" }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.1, ease: "easeInOut" }}
-        >
-          Our services
-        </motion.h1>
-      </div>
-      <motion.div
-        className="contentContainer col-lg-11 col-xl-9"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
-      >
-        <div className="col-lg-6">
-          {" "}
-          <Image
-            src={SecondImage}
-            alt="Second Image"
-            style={{
-              borderRadius: "16px",
-              width: "90%",
-              height: "60vh",
-              objectFit: "cover",
-            }}
-          />
-        </div>
-        <div className="col-lg-6 firstServiceContainer">
-          <h1 className="white-text play-write">Custom Headlights</h1>
-          <p className="customHeadlightsParagraph inconsolata">
-            See your car become the star of the show with lights that perfectly
-            highlight its shape, making it impossible to ignore.
-          </p>
-        </div>
-      </motion.div>
+      <div className="contentContainer col-lg-11 col-xl-9" id="service"></div>
       <motion.div
         className="contentContainer col-lg-11 col-xl-9"
         initial={{ opacity: 0 }}
@@ -188,8 +133,10 @@ export default function Home() {
       >
         <div className="col-lg-6 firstServiceContainer">
           {" "}
-          <h1 className="white-text play-write">Custom backlights</h1>
-          <p className="customHeadlightsParagraph inconsolata">
+          <h1 className="heroheaderText">
+            See through the Darkness <span className="now-span">Now</span>
+          </h1>
+          <p className="customHeadlightsParagraph">
             Imagine your car’s tail lights drawing every eye, their radiant glow
             highlighting its sleek lines and bold design, ensuring everyone
             remembers your departure.
@@ -200,39 +147,11 @@ export default function Home() {
             src={ThirdImage}
             alt="Second Image"
             style={{
-              borderRadius: "16px",
               width: "100%",
-              height: "60vh",
-              objectFit: "cover",
+              height: "65vh",
+              objectFit: "contain",
             }}
           />
-        </div>
-      </motion.div>
-      <motion.div
-        className="contentContainer col-lg-11 col-xl-9"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
-      >
-        <div className="col-lg-6">
-          {" "}
-          <Image
-            src={FourthImage}
-            alt="Second Image"
-            style={{
-              borderRadius: "16px",
-              width: "90%",
-              height: "60vh",
-              objectFit: "cover",
-            }}
-          />
-        </div>
-        <div className="col-lg-6 firstServiceContainer">
-          <h1 className="white-text play-write">Make your own kit</h1>
-          <p className="customHeadlightsParagraph inconsolata">
-            With our customizable options, your car will reflect your distinct
-            taste, making every drive a testament to your personal style.
-          </p>
         </div>
       </motion.div>
       <div className="footerOne">
