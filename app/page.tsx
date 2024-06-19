@@ -192,6 +192,7 @@ export default function Home() {
           />
         </div>
       </motion.div>
+      <div className="sneakinfo col-lg-11 col-xl-9">Hello</div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
         <div className="contactUsFormContainer col-lg-3">

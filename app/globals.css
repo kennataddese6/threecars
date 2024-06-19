@@ -134,6 +134,10 @@ body,
 .callActionButton:hover {
   box-shadow: 0 0 12px grey;
 }
+.sneakinfo {
+  border: 1px solid black;
+  margin: auto;
+}
 .carCardContainer {
   display: flex;
   justify-content: center;
