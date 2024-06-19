@@ -141,6 +141,7 @@ export default function Home() {
             highlighting its sleek lines and bold design, ensuring everyone
             remembers your departure.
           </p>
+          <button className="callActionButton"> Build kit </button>
         </div>
         <div className="col-lg-6 ">
           <Image
