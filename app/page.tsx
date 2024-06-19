@@ -193,9 +193,7 @@ export default function Home() {
         </div>
       </motion.div>
       <div className="footerOne">
-        <h1 className="center-text play-write" style={{ marginTop: "24px" }}>
-          Get in touch with us
-        </h1>
+        <h1 className="center-text play-write">Get in touch with us</h1>
         <div className="contactUsFormContainer col-lg-3">
           <input type="text" placeholder="Name" className="contactinputs" />
           <input type="text" placeholder="Email" className="contactinputs" />
