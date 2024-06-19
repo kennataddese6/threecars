@@ -134,7 +134,44 @@ export default function Home() {
         <div className="col-lg-6 firstServiceContainer">
           {" "}
           <h1 className="heroheaderText">
-            See through the Darkness <span className="now-span">Now</span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+            >
+              See{" "}
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.7, ease: "easeIn" }}
+            >
+              through{" "}
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.9, ease: "easeIn" }}
+            >
+              the{" "}
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.4, ease: "easeIn" }}
+            >
+              {" "}
+              Darkness
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.6, ease: "easeIn" }}
+              className="now-span"
+            >
+              {" "}
+              Now{" "}
+            </motion.span>
           </h1>
           <p className="customHeadlightsParagraph">
             Imagine your car’s tail lights drawing every eye, their radiant glow
