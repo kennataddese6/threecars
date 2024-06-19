@@ -158,7 +158,7 @@ export default function Home() {
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.4, ease: "easeIn" }}
+              transition={{ duration: 0.5, delay: 1.6, ease: "easeIn" }}
             >
               {" "}
               Darkness
@@ -166,7 +166,7 @@ export default function Home() {
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.6, ease: "easeIn" }}
+              transition={{ duration: 0.5, delay: 2.4, ease: "easeIn" }}
               className="now-span"
             >
               {" "}
