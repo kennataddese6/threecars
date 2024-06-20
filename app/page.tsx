@@ -200,14 +200,14 @@ export default function Home() {
             <p>Check our location.</p>
           </div>
         </div>
-        <div className="sneakInfoItem">
+        <div className="sneakInfoItem borderLine">
           <FaRegClock fontSize={32} color="grey" />
           <div>
             <h6>Working Hours</h6>
             <p>Mon-Fri 8:00 am – 12:30 pm</p>
           </div>
         </div>
-        <div className="sneakInfoItem">
+        <div className="sneakInfoItem borderLine">
           <FaPhone fontSize={32} color="grey" />
           <div>
             <h6>Our Contact</h6>

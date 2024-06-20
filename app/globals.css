@@ -142,17 +142,20 @@ body,
     0 10px 12px 0 rgba(196, 196, 196, 0.19);
   border-radius: 12px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .sneakInfoItem {
   display: flex;
-  padding: 0;
+  padding: 0 0 0 24px;
   align-items: center;
   cursor: pointer;
+  margin: 1em 0;
+  width: 100%;
 }
+
 .sneakInfoItem h6,
 p {
   margin: 0;
@@ -441,6 +444,17 @@ p {
   }
   .callActionButton {
     margin: 1.5em 0 0 0;
+  }
+  .borderLine {
+    border-left: 0.5px solid grey;
+  }
+  .sneakinfo {
+    display: flex;
+    justify-content: space-around;
+  }
+  .sneakInfoItem {
+    margin: 0;
+    width: auto;
   }
 }
 
