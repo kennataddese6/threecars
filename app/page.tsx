@@ -208,6 +208,10 @@ export default function Home() {
         </div>
         <button className="btn btn-primary">Call us</button>
       </div>
+      <div className="workstep col-lg-11 col-xl-9">
+        <button className="works-button center-item">How it works</button>
+        <h1 className="steps-header">Buy with following 3 working steps</h1>
+      </div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
         <div className="contactUsFormContainer col-lg-3">
