@@ -135,8 +135,33 @@ body,
   box-shadow: 0 0 12px grey;
 }
 .sneakinfo {
-  border: 1px solid black;
-  margin: auto;
+  color: black;
+  margin: 32px auto;
+  padding: 2rem;
+  box-shadow: 0 6px 8px 0 rgba(176, 176, 176, 0.2),
+    0 10px 12px 0 rgba(196, 196, 196, 0.19);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sneakInfoItem {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  cursor: pointer;
+}
+.sneakInfoItem h6,
+p {
+  margin: 0;
+}
+.sneakInfoItem p {
+  color: grey;
+}
+.sneakInfoItem div {
+  margin: 0 0 0 8px;
 }
 .carCardContainer {
   display: flex;

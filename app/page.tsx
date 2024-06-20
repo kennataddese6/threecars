@@ -9,8 +9,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
-import { MdClose } from "react-icons/md";
-import { MdMenu } from "react-icons/md";
+import { MdClose, MdMenu, MdLocationOn } from "react-icons/md";
+import { FaRegClock, FaPhone } from "react-icons/fa";
 export default function Home() {
   const router = useRouter();
   const headerListItems = [
@@ -192,7 +192,30 @@ export default function Home() {
           />
         </div>
       </motion.div>
-      <div className="sneakinfo col-lg-11 col-xl-9">Hello</div>
+      <div className="sneakinfo col-lg-11 col-xl-9">
+        <div className="sneakInfoItem">
+          <MdLocationOn fontSize={32} color="grey" />
+          <div>
+            <h6>Location</h6>
+            <p>Check our location.</p>
+          </div>
+        </div>
+        <div className="sneakInfoItem">
+          <FaRegClock fontSize={32} color="grey" />
+          <div>
+            <h6>Working Hours</h6>
+            <p>Mon-Fri 8:00 am – 12:30 pm</p>
+          </div>
+        </div>
+        <div className="sneakInfoItem">
+          <FaPhone fontSize={32} color="grey" />
+          <div>
+            <h6>Our Contact</h6>
+            <p>+1734310734329</p>
+          </div>
+        </div>
+        <button className="btn btn-primary">Call us</button>
+      </div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
         <div className="contactUsFormContainer col-lg-3">
