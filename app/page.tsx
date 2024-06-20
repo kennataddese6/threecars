@@ -181,15 +181,7 @@ export default function Home() {
           <button className="callActionButton"> Build kit </button>
         </div>
         <div className="col-lg-6 ">
-          <Image
-            src={ThirdImage}
-            alt="Second Image"
-            style={{
-              width: "100%",
-              height: "65vh",
-              objectFit: "contain",
-            }}
-          />
+          <Image src={ThirdImage} alt="Second Image" className="heroImage" />
         </div>
       </motion.div>
       <div className="sneakinfo col-lg-11 col-xl-9">
