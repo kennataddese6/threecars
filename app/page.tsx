@@ -1,33 +1,36 @@
-"use client";
-import "react-toastify/dist/ReactToastify.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./globals.css";
-import FirstImage from "@/assets/FirstImage.webp";
-import SecondImage from "@/assets/SecondImage.webp";
-import ThirdImage from "@/assets/ThirdImage.png";
-import FourthImage from "@/assets/FourthImage.webp";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { toast, ToastContainer } from "react-toastify";
-import { MdClose, MdMenu, MdLocationOn } from "react-icons/md";
-import Slider from "react-slick";
-import Vw from "@/assets/Vw.png";
-import lexus from "@/assets/lexus.png";
-import honda from "@/assets/honda.png";
-import dodge from "@/assets/dodge.png";
-import audi from "@/assets/audi.png";
-import chev from "@/assets/chev.png";
-import mazda from "@/assets/mazda.jpg";
-import ram from "@/assets/ram.jpg";
+'use client';
+import 'react-toastify/dist/ReactToastify.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './globals.css';
+import FirstImage from '@/assets/FirstImage.webp';
+import SecondImage from '@/assets/SecondImage.webp';
+import ThirdImage from '@/assets/ThirdImage.png';
+import FourthImage from '@/assets/FourthImage.webp';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { toast, ToastContainer } from 'react-toastify';
+import { MdClose, MdMenu, MdLocationOn } from 'react-icons/md';
+import Slider from 'react-slick';
+import Vw from '@/assets/Vw.png';
+import lexus from '@/assets/lexus.png';
+import honda from '@/assets/honda.png';
+import dodge from '@/assets/dodge.png';
+import audi from '@/assets/audi.png';
+import chev from '@/assets/chev.png';
+import mazda from '@/assets/mazda.png';
+import ram from '@/assets/ram.png';
+import subaru from '@/assets/subaru.png';
+import mini from '@/assets/mini.png';
+import jeep from '@/assets/jeep.png';
 import {
   FaRegClock,
   FaPhone,
   FaCheckCircle,
   FaCartPlus,
   FaTruckMoving,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 export default function Home() {
   const router = useRouter();
   const settings = {
@@ -64,24 +67,24 @@ export default function Home() {
   };
   const headerListItems = [
     {
-      name: "Home",
+      name: 'Home',
       active: true,
-      des: "/",
+      des: '/',
     },
     {
-      name: "Make your own kit",
+      name: 'Make your own kit',
       active: false,
-      des: "/kit",
+      des: '/kit',
     },
     {
-      name: "Parts for sale",
+      name: 'Parts for sale',
       active: false,
-      des: "/shop",
+      des: '/shop',
     },
     {
-      name: "Our services",
+      name: 'Our services',
       active: false,
-      des: "#service",
+      des: '#service',
     },
   ];
   const getElement = (id: string) => {
@@ -91,7 +94,7 @@ export default function Home() {
   const setDisplay = (
     elementId: string,
     displayValue: string,
-    height: string
+    height: string,
   ) => {
     const element = getElement(elementId);
     if (element) {
@@ -101,28 +104,28 @@ export default function Home() {
   };
 
   const disableHeaders = () => {
-    setDisplay("header", "none", "auto");
-    setDisplay("headerright", "none", "auto");
-    setDisplay("closeicon", "none", "auto");
-    setDisplay("menuicon", "block", "auto");
-    setDisplay("headerContainer", "block", "auto");
+    setDisplay('header', 'none', 'auto');
+    setDisplay('headerright', 'none', 'auto');
+    setDisplay('closeicon', 'none', 'auto');
+    setDisplay('menuicon', 'block', 'auto');
+    setDisplay('headerContainer', 'block', 'auto');
   };
 
   const enableHeader = () => {
-    setDisplay("header", "block", "auto");
-    setDisplay("headerright", "block", "auto");
-    setDisplay("closeicon", "block", "auto");
-    setDisplay("menuicon", "none", "auto");
-    setDisplay("headerContainer", "block", "100vh");
+    setDisplay('header', 'block', 'auto');
+    setDisplay('headerright', 'block', 'auto');
+    setDisplay('closeicon', 'block', 'auto');
+    setDisplay('menuicon', 'none', 'auto');
+    setDisplay('headerContainer', 'block', '100vh');
   };
   const handleNavigation = (nav: String) => {
     disableHeaders();
-    if (nav === "/shop") {
-      const data = localStorage.getItem("sale");
+    if (nav === '/shop') {
+      const data = localStorage.getItem('sale');
       if (data) {
-        router.push("shop");
+        router.push('shop');
       } else {
-        toast.info("Coming soon.");
+        toast.info('Coming soon.');
       }
     } else {
       router.push(`${nav}`);
@@ -137,14 +140,14 @@ export default function Home() {
             MT CUSTOM LIGHTS
             <MdClose
               color="black"
-              fontSize={"1.5rem"}
+              fontSize={'1.5rem'}
               onClick={disableHeaders}
               id="closeicon"
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
             />
             <MdMenu
               color="black"
-              fontSize={"1.5rem"}
+              fontSize={'1.5rem'}
               onClick={enableHeader}
               id="menuicon"
             />
@@ -165,7 +168,7 @@ export default function Home() {
           <div className="rightheader col-xl-3" id="headerright">
             <button
               className="btn btn-primary"
-              onClick={() => router.push("/signin")}
+              onClick={() => router.push('/signin')}
             >
               Sign in
             </button>
@@ -178,48 +181,48 @@ export default function Home() {
         className="contentContainer col-lg-11 col-xl-9"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
+        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
       >
         <div className="col-lg-6 firstServiceContainer">
-          {" "}
+          {' '}
           <h1 className="heroheaderText">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+              transition={{ duration: 0.5, delay: 0.5, ease: 'easeIn' }}
             >
-              See{" "}
+              See{' '}
             </motion.span>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.7, ease: "easeIn" }}
+              transition={{ duration: 0.5, delay: 0.7, ease: 'easeIn' }}
             >
-              through{" "}
+              through{' '}
             </motion.span>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.9, ease: "easeIn" }}
+              transition={{ duration: 0.5, delay: 0.9, ease: 'easeIn' }}
             >
-              the{" "}
+              the{' '}
             </motion.span>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.6, ease: "easeIn" }}
+              transition={{ duration: 0.5, delay: 1.6, ease: 'easeIn' }}
             >
-              {" "}
+              {' '}
               Darkness
             </motion.span>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 2.4, ease: "easeIn" }}
+              transition={{ duration: 0.5, delay: 2.4, ease: 'easeIn' }}
               className="now-span"
             >
-              {" "}
-              Now{" "}
+              {' '}
+              Now{' '}
             </motion.span>
           </h1>
           <p className="customHeadlightsParagraph">
@@ -270,7 +273,7 @@ export default function Home() {
             <b>Choose car model</b>
           </h6>
           <p className="stepsPargraph">
-            Select you car model from the build kit.{" "}
+            Select you car model from the build kit.{' '}
           </p>
         </div>
         <div className="col-lg-3 stepItemContainer">
@@ -281,7 +284,7 @@ export default function Home() {
             <b>Add your lights</b>
           </h6>
           <p className="stepsPargraph">
-            Add you lights for the car of your choice.{" "}
+            Add you lights for the car of your choice.{' '}
           </p>
         </div>
         <div className="col-lg-3 stepItemContainer">
@@ -292,62 +295,125 @@ export default function Home() {
             <b>Order you kits</b>
           </h6>
           <p className="stepsPargraph">
-            Book your lights and we will deliver it to you.{" "}
+            Book your lights and we will deliver it to you.{' '}
           </p>
         </div>
       </div>
       <div className="brandsContainer">
         <Slider {...settings}>
           <div>
+            <Image
+              src={Vw}
+              alt="Volswagen"
+              width={100}
+              className="center-item"
+            />
+          </div>
+          <div>
+            {' '}
+            <Image
+              src={lexus}
+              alt="Volswagen"
+              width={100}
+              className="center-item"
+            />
+          </div>
+          <div>
+            {' '}
+            <Image
+              src={dodge}
+              alt="Volswagen"
+              width={100}
+              className="center-item"
+            />
+          </div>
+          <div>
+            <Image
+              src={audi}
+              alt="Volswagen"
+              width={100}
+              className="center-item"
+              height={100}
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+          <div>
+            <Image
+              src={chev}
+              alt="Volswagen"
+              width={100}
+              className="center-item"
+              height={100}
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+          <div>
+            <Image
+              src={ram}
+              alt="Volswagen"
+              width={100}
+              className="center-item"
+              height={100}
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+          <div>
+            <Image
+              src={mazda}
+              alt="Volswagen"
+              width={100}
+              className="center-item"
+              height={80}
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+          <div>
+            <Image
+              src={honda}
+              alt="Volswagen"
+              width={100}
+              height={100}
+              className="center-item"
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+          <div>
             <h3 className="center-text">
-              <Image src={Vw} alt="Volswagen" width={100} />
+              <div>
+                <Image
+                  src={mini}
+                  alt="Volswagen"
+                  width={100}
+                  className="center-item"
+                  height={100}
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
             </h3>
           </div>
           <div>
             <h3 className="center-text">
-              {" "}
-              <Image src={dodge} alt="Volswagen" width={100} />
+              <Image
+                src={jeep}
+                alt="Volswagen"
+                width={100}
+                className="center-item"
+                height={100}
+                style={{ objectFit: 'cover' }}
+              />
             </h3>
           </div>
           <div>
             <h3 className="center-text">
-              <Image src={audi} alt="Volswagen" width={100} />
+              <Image
+                src={subaru}
+                alt="Volswagen"
+                width={100}
+                className="center-item"
+                height={100}
+                style={{ objectFit: 'cover' }}
+              />
             </h3>
-          </div>
-          <div>
-            <h3 className="center-text">
-              <Image src={chev} alt="Volswagen" width={100} />
-            </h3>
-          </div>
-          <div>
-            <h3 className="center-text">
-              {" "}
-              <Image src={lexus} alt="Volswagen" width={100} />
-            </h3>
-          </div>
-          <div>
-            <h3 className="center-text">
-              <Image src={ram} alt="Volswagen" width={100} />
-            </h3>
-          </div>
-          <div>
-            <h3 className="center-text">
-              <Image src={mazda} alt="Volswagen" width={100} />
-            </h3>
-          </div>
-          <div>
-            <h3 className="center-text">
-              <Image src={honda} alt="Volswagen" width={100} />
-            </h3>
-          </div>
-          <div>
-            <h3 className="center-text">Mini</h3>
-          </div>
-          <div>
-            <h3 className="center-text">Jeep</h3>
-          </div>
-          <div>
-            <h3 className="center-text">Subaru</h3>
           </div>
         </Slider>
       </div>
@@ -358,11 +424,11 @@ export default function Home() {
           <input type="text" placeholder="Email" className="contactinputs" />
           <textarea
             placeholder="Message"
-            style={{ width: "100%", height: "128px" }}
+            style={{ width: '100%', height: '128px' }}
             className="contactinputs"
           />
           <button
-            style={{ width: "100%", padding: "8px 0", marginTop: "6px" }}
+            style={{ width: '100%', padding: '8px 0', marginTop: '6px' }}
             className="btn btn-dark"
           >
             Get in touch with us
