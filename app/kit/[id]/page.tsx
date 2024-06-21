@@ -1,206 +1,206 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import Car1 from '@/assets/Car1.webp';
-import Car2 from '@/assets/Car2.webp';
-import Car3 from '@/assets/Car3.webp';
-import Car4 from '@/assets/Car4.webp';
-import Car5 from '@/assets/Car5.webp';
-import Car6 from '@/assets/Car6.webp';
-import Car7 from '@/assets/Car7.webp';
-import Car8 from '@/assets/Car8.webp';
-import Car9 from '@/assets/Car9.webp';
-import Car10 from '@/assets/Car10.webp';
-import Car11 from '@/assets/Car11.webp';
-import Light1 from '@/assets/light1.webp';
-import Light2 from '@/assets/light2.webp';
-import Light3 from '@/assets/light3.jpg';
-import Light4 from '@/assets/light4.webp';
-import Light5 from '@/assets/light5.webp';
-import { FaPlus, FaMinus } from 'react-icons/fa';
-import { useEffect, useState } from 'react';
-import Popup from '@/components/Popup';
-import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+"use client";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Car1 from "@/assets/Car1.webp";
+import Car2 from "@/assets/Car2.webp";
+import Car3 from "@/assets/Car3.webp";
+import Car4 from "@/assets/Car4.webp";
+import Car5 from "@/assets/Car5.webp";
+import Car6 from "@/assets/Car6.webp";
+import Car7 from "@/assets/Car7.webp";
+import Car8 from "@/assets/Car8.webp";
+import Car9 from "@/assets/Car9.webp";
+import Car10 from "@/assets/Car10.webp";
+import Car11 from "@/assets/Car11.webp";
+import Light1 from "@/assets/light1.webp";
+import Light2 from "@/assets/light2.webp";
+import Light3 from "@/assets/light3.jpg";
+import Light4 from "@/assets/light4.webp";
+import Light5 from "@/assets/light5.webp";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import Popup from "@/components/Popup";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 interface Paramter {
   id: number;
 }
 export default function BuildCarkit({ params }: { params: Paramter }) {
   const [choices, setChoices] = useState<number[]>([]);
-  const [email, setEmail] = useState<String>('');
+  const [email, setEmail] = useState<String>("");
   const [popupView, setPopupView] = useState<Boolean>(false);
   const router = useRouter();
 
   const headerListItems = [
     {
-      name: 'Home',
+      name: "Home",
       active: false,
-      des: '/',
+      des: "/",
     },
     {
-      name: 'Make your own kit',
+      name: "Make your own kit",
       active: true,
-      des: '/kit',
+      des: "/kit",
     },
     {
-      name: 'Parts for sale',
+      name: "Parts for sale",
       active: false,
-      des: '/',
+      des: "/",
     },
     {
-      name: 'Our services',
+      name: "Our services",
       active: false,
-      des: '/',
+      des: "/",
     },
   ];
 
   const carList = [
     {
-      name: 'Lexus',
+      name: "Lexus",
       image: Car1,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2019,
-      gas: 'Petrol',
-      color: 'Blue',
-      miles: '240 Km/h',
+      gas: "Petrol",
+      color: "Blue",
+      miles: "240 Km/h",
       trending: true,
     },
     {
-      name: 'RAM',
+      name: "RAM",
       image: Car2,
-      gear: 'Manual',
+      gear: "Manual",
       date: 2023,
-      gas: 'Diesel',
-      color: 'Red',
-      miles: '320 Km/h',
+      gas: "Diesel",
+      color: "Red",
+      miles: "320 Km/h",
       trending: false,
     },
     {
-      name: 'Chevrolet',
+      name: "Chevrolet",
       image: Car4,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Mazda',
+      name: "Mazda",
       image: Car3,
-      gear: 'Semiauto',
+      gear: "Semiauto",
       date: 2024,
-      gas: 'Gasoline',
-      color: 'Grey',
-      miles: '180 Km/h',
+      gas: "Gasoline",
+      color: "Grey",
+      miles: "180 Km/h",
       trending: true,
     },
     {
-      name: 'Honda',
+      name: "Honda",
       image: Car7,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Mini',
+      name: "Mini",
       image: Car5,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Subaru',
+      name: "Subaru",
       image: Car6,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Jeep',
+      name: "Jeep",
       image: Car8,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Audi',
+      name: "Audi",
       image: Car9,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Dodge',
+      name: "Dodge",
       image: Car10,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
     {
-      name: 'Volkswagen',
+      name: "Volkswagen",
       image: Car11,
-      gear: 'Automatic',
+      gear: "Automatic",
       date: 2024,
-      gas: 'Petrol',
-      color: 'Red',
-      miles: '340 Km/h',
+      gas: "Petrol",
+      color: "Red",
+      miles: "340 Km/h",
       trending: false,
     },
   ];
   const [kits, setKits] = useState([
     {
-      title: 'Demon eyes',
+      title: "Demon eyes",
       image: Light1,
       description:
-        'Add RGB leds in your projectors to make those eyes look like evil.',
+        "Add RGB leds in your projectors to make those eyes look like evil.",
       added: false,
     },
     {
-      title: 'Led Car strips',
+      title: "Led Car strips",
       image: Light2,
       description:
-        'Add RGB or White/Amber strip surround the edges to increase the style',
+        "Add RGB or White/Amber strip surround the edges to increase the style",
       added: false,
     },
     {
-      title: 'Projector retrofit',
+      title: "Projector retrofit",
       image: Light3,
       description:
-        'Add projectors to have more light output on nocturnal rides. Create a better style as well',
+        "Add projectors to have more light output on nocturnal rides. Create a better style as well",
       added: false,
     },
     {
-      title: 'Halos',
+      title: "Halos",
       image: Light4,
       description:
-        'Add RGB, RGBW or White/Amber halos on the projectors shrouds to increase the style',
+        "Add RGB, RGBW or White/Amber halos on the projectors shrouds to increase the style",
       added: false,
     },
     {
-      title: 'Engraving lenses',
+      title: "Engraving lenses",
       image: Light5,
       description:
-        'Custom made design or logo engraved in your projectors lenses',
+        "Custom made design or logo engraved in your projectors lenses",
       added: false,
     },
   ]);
@@ -216,7 +216,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
     setKits(updatedKits);
   };
   const handleMinus = (index: number) => {
-    setChoices(choices.filter(choice => choice !== index));
+    setChoices(choices.filter((choice) => choice !== index));
     const updatedKits = [...kits];
 
     updatedKits[index] = {
@@ -232,16 +232,16 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
   };
   const handleRequestOrder = () => {
     if (!email) {
-      toast.error('Enter you email');
+      toast.error("Enter you email");
       return;
     }
     const list = `<ul> ${choices.map(
-      choice => `<li>${kits[choice].title}</li>`,
+      (choice) => `<li>${kits[choice].title}</li>`
     )}
       </ul>
     `;
     var templateParams = {
-      title: 'You have an order',
+      title: "You have an order",
       email: process.env.NEXT_PUBLIC_RECIEVER,
       description: `${email} has requested order for the following items for the car model ${
         carList[params.id].name
@@ -254,24 +254,24 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
       emailjs
         .send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
-          'verfication_link',
+          "verfication_link",
           templateParams,
           {
             publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
-          },
+          }
         )
         .then(
-          response => {
-            toast.success('Your order is sent');
-            setEmail('');
+          (response) => {
+            toast.success("Your order is sent");
+            setEmail("");
             setChoices([]);
           },
-          error => {
-            toast.error('Sending order failed');
-          },
+          (error) => {
+            toast.error("Sending order failed");
+          }
         );
     } else {
-      toast.error('Inalid configuration');
+      toast.error("Inalid configuration");
     }
     setPopupView(false);
   };
@@ -321,7 +321,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
           </div>
         </div>
         <div className="col-lg-4">
-          {' '}
+          {" "}
           <div className="addtokitcontainer">
             <input
               type="text"
@@ -338,9 +338,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
                   ></Image>
                 </div>
                 <div className="kitdescriptionContainer col-lg-8">
-                  <h6 className="white-text" style={{ margin: '2px' }}>
-                    {kit.title}
-                  </h6>
+                  <h6 style={{ margin: "2px" }}>{kit.title}</h6>
                   <p className="kitdescription ">{kit.description}</p>
                 </div>
                 <div className="addkitcontainer col-lg-1">
@@ -358,7 +356,7 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
                         handleMinus(index);
                       }}
                     />
-                  )}{' '}
+                  )}{" "}
                 </div>
               </div>
             ))}
@@ -379,8 +377,8 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
             <h6
               className="center-text selectionInfoText"
               style={{
-                width: '100%',
-                padding: '60px 0',
+                width: "100%",
+                padding: "60px 0",
               }}
             >
               Nothing added yet!
@@ -397,14 +395,14 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
             ) : (
               <button
                 className="btn btn-warning requestorderbutton"
-                style={{ marginLeft: 'auto' }}
+                style={{ marginLeft: "auto" }}
                 onClick={() => handleOrder()}
               >
                 Request an order
               </button>
             )
           ) : (
-            ''
+            ""
           )}
         </div>
       </div>
