@@ -10,7 +10,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import { MdClose, MdMenu, MdLocationOn } from "react-icons/md";
-import { FaRegClock, FaPhone } from "react-icons/fa";
+import {
+  FaRegClock,
+  FaPhone,
+  FaCheckCircle,
+  FaCartPlus,
+  FaTruckMoving,
+} from "react-icons/fa";
 export default function Home() {
   const router = useRouter();
   const headerListItems = [
@@ -211,6 +217,41 @@ export default function Home() {
       <div className="workstep col-lg-11 col-xl-9">
         <button className="works-button center-item">How it works</button>
         <h1 className="steps-header">Buy with following 3 working steps</h1>
+      </div>
+      <div className="stepsContainer col-lg-8 center-text">
+        <div className="col-lg-3 stepItemContainer">
+          <div className="stepIconContainer">
+            <FaCheckCircle color="#0d6efd" fontSize={32} />
+          </div>
+          <h6 className="center-text ">
+            <b>Choose car model</b>
+          </h6>
+          <p className="stepsPargraph">
+            Select you car car model from the build kit.{" "}
+          </p>
+        </div>
+        <div className="col-lg-3 stepItemContainer">
+          <div className="stepIconContainer">
+            <FaCartPlus color="#0d6efd" fontSize={32} />
+          </div>
+          <h6 className="center-text ">
+            <b>Add your lights</b>
+          </h6>
+          <p className="stepsPargraph">
+            Add you lights for the car of your choice.{" "}
+          </p>
+        </div>
+        <div className="col-lg-3 stepItemContainer">
+          <div className="stepIconContainer">
+            <FaTruckMoving color="#0d6efd" fontSize={32} />
+          </div>
+          <h6 className="center-text ">
+            <b>Order you kits</b>
+          </h6>
+          <p className="stepsPargraph">
+            Book your lights and we will deliver it directly to you.{" "}
+          </p>
+        </div>
       </div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>

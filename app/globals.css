@@ -15,6 +15,7 @@ body,
   /* background-image: url('https://myinternetscout.com/wp-content/uploads/2018/03/background-shapes-01alt-14-41-42-627v3.png'); */
   background-repeat: no-repeat;
   background-size: cover;
+  scroll-behavior: smooth;
 }
 .center-text {
   text-align: center;
@@ -192,6 +193,29 @@ p {
 }
 .sneakInfoItem div {
   margin: 0 0 0 8px;
+}
+.stepsContainer {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+.stepIconContainer {
+  padding: 2rem;
+  background-color: #ecf5ff;
+  border-radius: 16px;
+  display: inline-block;
+  margin: 1em auto;
+}
+.stepsPargraph {
+  color: grey;
+  font-size: 0.9rem;
+  margin: 0.5em;
+}
+
+.stepItemContainer {
+  padding: 1em;
 }
 .carCardContainer {
   display: flex;
