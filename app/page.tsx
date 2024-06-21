@@ -253,6 +253,19 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <div className="brandsContainer">
+        <div>Volswagen</div>
+        <div>Dodge</div>
+        <div>Chevrolet</div>
+        <div>Lexus</div>
+        <div>RAM</div>
+        <div>Honda</div>
+        <div>Mazda</div>
+        <div>Mini</div>
+        <div>Subaru</div>
+        <div>Jeep</div>
+        <div>Audi</div>
+      </div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
         <div className="contactUsFormContainer col-lg-3">

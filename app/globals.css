@@ -217,6 +217,10 @@ p {
 .stepItemContainer {
   padding: 1em;
 }
+.brandsContainer {
+  display: flex;
+  justify-content: space-between;
+}
 .carCardContainer {
   display: flex;
   justify-content: center;
