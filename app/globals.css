@@ -199,7 +199,7 @@ p {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 2em;
+  padding: 1em;
 }
 .stepIconContainer {
   padding: 2rem;

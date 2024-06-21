@@ -218,7 +218,7 @@ export default function Home() {
         <button className="works-button center-item">How it works</button>
         <h1 className="steps-header">Buy with following 3 working steps</h1>
       </div>
-      <div className="stepsContainer col-lg-8 center-text">
+      <div className="stepsContainer col-lg-10 col-xl-8 center-text">
         <div className="col-lg-3 stepItemContainer">
           <div className="stepIconContainer">
             <FaCheckCircle color="#0d6efd" fontSize={32} />
@@ -227,7 +227,7 @@ export default function Home() {
             <b>Choose car model</b>
           </h6>
           <p className="stepsPargraph">
-            Select you car car model from the build kit.{" "}
+            Select you car model from the build kit.{" "}
           </p>
         </div>
         <div className="col-lg-3 stepItemContainer">
@@ -249,7 +249,7 @@ export default function Home() {
             <b>Order you kits</b>
           </h6>
           <p className="stepsPargraph">
-            Book your lights and we will deliver it directly to you.{" "}
+            Book your lights and we will deliver it to you.{" "}
           </p>
         </div>
       </div>
