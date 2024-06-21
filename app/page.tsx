@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { toast, ToastContainer } from 'react-toastify';
 import { MdClose, MdMenu, MdLocationOn } from 'react-icons/md';
+import { FaCar } from 'react-icons/fa';
 import Slider from 'react-slick';
 import Vw from '@/assets/Vw.png';
 import lexus from '@/assets/lexus.png';
@@ -24,6 +25,11 @@ import ram from '@/assets/ram.png';
 import subaru from '@/assets/subaru.png';
 import mini from '@/assets/mini.png';
 import jeep from '@/assets/jeep.png';
+import { RiCarLine } from 'react-icons/ri';
+import { CiShoppingCart } from 'react-icons/ci';
+import { CiAlarmOn } from 'react-icons/ci';
+import sports from '@/assets/sports.png';
+import sports2 from '@/assets/sports2.png';
 import {
   FaRegClock,
   FaPhone,
@@ -59,7 +65,7 @@ export default function Home() {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -417,6 +423,70 @@ export default function Home() {
           </div>
         </Slider>
       </div>
+      <motion.div
+        className="contentContainer col-lg-11 col-xl-9"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
+      >
+        <div className="col-lg-6 ">
+          <Image src={sports2} alt="Second Image" className="heroImage" />
+        </div>
+        <div className="col-lg-6 serviceHolder">
+          {' '}
+          <button className="works-button ">Our services</button>
+          <h3 className="servicesSubHeader">
+            We offer the best expeience <br /> with our sales
+          </h3>
+          <div className="servicesContainer">
+            <div className="serviceIconContainer">
+              <FaCar fontSize={24} color="#0d6efd" />
+            </div>
+            <div className="serviceDescription">
+              <h6 className="stepstext">Custom headlight</h6>
+              <p className="servicesPargraph">
+                See you car become the start of the show with lights that
+                perfectly highlights it shape
+              </p>
+            </div>
+          </div>
+          <div className="servicesContainer">
+            <div className="serviceIconContainer">
+              <RiCarLine fontSize={24} color="#0d6efd" />
+            </div>
+            <div className="serviceDescription">
+              <h6 className="stepstext">Custom backlight</h6>
+              <p className="servicesPargraph">
+                Make everyone look back and imprint a memorable signature with
+                our stylish backlights
+              </p>
+            </div>
+          </div>
+          <div className="servicesContainer">
+            <div className="serviceIconContainer">
+              <CiShoppingCart fontSize={24} color="#0d6efd" />
+            </div>
+            <div className="serviceDescription">
+              <h6 className="stepstext">Make your own kits</h6>
+              <p className="servicesPargraph">
+                With our customizable options, you car will reflect your
+                distinct taste.
+              </p>
+            </div>
+          </div>
+          <div className="servicesContainer">
+            <div className="serviceIconContainer">
+              <CiAlarmOn fontSize={24} color="#0d6efd" />
+            </div>
+            <div className="serviceDescription">
+              <h6 className="stepstext">Parts for sale</h6>
+              <p className="servicesPargraph">
+                Coming soon with our latest products
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
         <div className="contactUsFormContainer col-lg-3">
