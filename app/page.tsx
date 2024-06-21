@@ -13,7 +13,14 @@ import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import { MdClose, MdMenu, MdLocationOn } from "react-icons/md";
 import Slider from "react-slick";
-
+import Vw from "@/assets/Vw.png";
+import lexus from "@/assets/lexus.png";
+import honda from "@/assets/honda.png";
+import dodge from "@/assets/dodge.png";
+import audi from "@/assets/audi.png";
+import chev from "@/assets/chev.png";
+import mazda from "@/assets/mazda.jpg";
+import ram from "@/assets/ram.jpg";
 import {
   FaRegClock,
   FaPhone,
@@ -292,28 +299,46 @@ export default function Home() {
       <div className="brandsContainer">
         <Slider {...settings}>
           <div>
-            <h3 className="center-text">Volswagen</h3>
+            <h3 className="center-text">
+              <Image src={Vw} alt="Volswagen" width={100} />
+            </h3>
           </div>
           <div>
-            <h3 className="center-text">Dodge</h3>
+            <h3 className="center-text">
+              {" "}
+              <Image src={dodge} alt="Volswagen" width={100} />
+            </h3>
           </div>
           <div>
-            <h3 className="center-text">Audi</h3>
+            <h3 className="center-text">
+              <Image src={audi} alt="Volswagen" width={100} />
+            </h3>
           </div>
           <div>
-            <h3 className="center-text">Chevrolet</h3>
+            <h3 className="center-text">
+              <Image src={chev} alt="Volswagen" width={100} />
+            </h3>
           </div>
           <div>
-            <h3 className="center-text">Lexus</h3>
+            <h3 className="center-text">
+              {" "}
+              <Image src={lexus} alt="Volswagen" width={100} />
+            </h3>
           </div>
           <div>
-            <h3 className="center-text">RAM</h3>
+            <h3 className="center-text">
+              <Image src={ram} alt="Volswagen" width={100} />
+            </h3>
           </div>
           <div>
-            <h3 className="center-text">Mazda</h3>
+            <h3 className="center-text">
+              <Image src={mazda} alt="Volswagen" width={100} />
+            </h3>
           </div>
           <div>
-            <h3 className="center-text">Honda</h3>
+            <h3 className="center-text">
+              <Image src={honda} alt="Volswagen" width={100} />
+            </h3>
           </div>
           <div>
             <h3 className="center-text">Mini</h3>
