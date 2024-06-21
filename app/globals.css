@@ -218,8 +218,9 @@ p {
   padding: 1em;
 }
 .brandsContainer {
-  display: flex;
-  justify-content: space-between;
+  padding: 7em 0;
+  width: 100%;
+  overflow: hidden;
 }
 .carCardContainer {
   display: flex;

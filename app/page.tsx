@@ -1,5 +1,7 @@
 "use client";
 import "react-toastify/dist/ReactToastify.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 import FirstImage from "@/assets/FirstImage.webp";
 import SecondImage from "@/assets/SecondImage.webp";
@@ -10,6 +12,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import { MdClose, MdMenu, MdLocationOn } from "react-icons/md";
+import Slider from "react-slick";
+
 import {
   FaRegClock,
   FaPhone,
@@ -19,6 +23,38 @@ import {
 } from "react-icons/fa";
 export default function Home() {
   const router = useRouter();
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   const headerListItems = [
     {
       name: "Home",
@@ -254,17 +290,41 @@ export default function Home() {
         </div>
       </div>
       <div className="brandsContainer">
-        <div>Volswagen</div>
-        <div>Dodge</div>
-        <div>Chevrolet</div>
-        <div>Lexus</div>
-        <div>RAM</div>
-        <div>Honda</div>
-        <div>Mazda</div>
-        <div>Mini</div>
-        <div>Subaru</div>
-        <div>Jeep</div>
-        <div>Audi</div>
+        <Slider {...settings}>
+          <div>
+            <h3 className="center-text">Volswagen</h3>
+          </div>
+          <div>
+            <h3 className="center-text">Dodge</h3>
+          </div>
+          <div>
+            <h3 className="center-text">Audi</h3>
+          </div>
+          <div>
+            <h3 className="center-text">Chevrolet</h3>
+          </div>
+          <div>
+            <h3 className="center-text">Lexus</h3>
+          </div>
+          <div>
+            <h3 className="center-text">RAM</h3>
+          </div>
+          <div>
+            <h3 className="center-text">Mazda</h3>
+          </div>
+          <div>
+            <h3 className="center-text">Honda</h3>
+          </div>
+          <div>
+            <h3 className="center-text">Mini</h3>
+          </div>
+          <div>
+            <h3 className="center-text">Jeep</h3>
+          </div>
+          <div>
+            <h3 className="center-text">Subaru</h3>
+          </div>
+        </Slider>
       </div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
