@@ -471,11 +471,14 @@ p {
   width: 90%;
 }
 .copyRightFooter {
-  background-color: #272626;
+  background-color: #051c34;
+}
+footer {
   padding: 16px 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
 }
 .siginContainer {
   position: absolute;
