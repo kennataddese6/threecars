@@ -242,7 +242,12 @@ export default function Home() {
           <Image src={ThirdImage} alt="Second Image" className="heroImage" />
         </div>
       </motion.div>
-      <div className="sneakinfo col-lg-11 col-xl-9">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.6, delay: 0.7, ease: "easeInOut" }}
+        className="sneakinfo col-lg-11 col-xl-9"
+      >
         <div className="sneakInfoItem">
           <MdLocationOn fontSize={32} color="grey" />
           <div>
@@ -265,15 +270,25 @@ export default function Home() {
           </div>
         </div>
         <button className="btn btn-primary">Call us</button>
-      </div>
-      <div className="workstep col-lg-11 col-xl-9">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
+        className="workstep col-lg-11 col-xl-9"
+      >
         <button className="works-button " style={{ margin: "auto" }}>
           How it works
         </button>
         <h1 className="steps-header">Buy with following 3 working steps</h1>
-      </div>
+      </motion.div>
       <div className="stepsContainer col-lg-10 col-xl-8 center-text">
-        <div className="col-lg-3 stepItemContainer">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
+          className="col-lg-3 stepItemContainer"
+        >
           <div className="stepIconContainer">
             <FaCheckCircle color="#0d6efd" fontSize={32} />
           </div>
@@ -283,8 +298,13 @@ export default function Home() {
           <p className="stepsPargraph">
             Select you car model from the build kit.{" "}
           </p>
-        </div>
-        <div className="col-lg-3 stepItemContainer">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1, ease: "easeInOut" }}
+          className="col-lg-3 stepItemContainer"
+        >
           <div className="stepIconContainer">
             <FaCartPlus color="#0d6efd" fontSize={32} />
           </div>
@@ -294,8 +314,13 @@ export default function Home() {
           <p className="stepsPargraph">
             Add you lights for the car of your choice.{" "}
           </p>
-        </div>
-        <div className="col-lg-3 stepItemContainer">
+        </motion.div>
+        <motion.div
+          className="col-lg-3 stepItemContainer"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
+        >
           <div className="stepIconContainer">
             <FaTruckMoving color="#0d6efd" fontSize={32} />
           </div>
@@ -305,7 +330,7 @@ export default function Home() {
           <p className="stepsPargraph">
             Book your lights and we will deliver it to you.{" "}
           </p>
-        </div>
+        </motion.div>
       </div>
       <div className="brandsContainer">
         <Slider {...settings}>
