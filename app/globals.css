@@ -294,6 +294,8 @@ p {
 
 .carImagePreivewContainer {
   height: 66.5vh;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
 }
 .selectionInfoText {
   color: #888;
@@ -404,6 +406,8 @@ p {
 .choiceItemContainer {
   padding: 6px;
   height: 10rem;
+  padding: 0.5em;
+  width: 100%;
 }
 .requestorderbutton {
   margin-top: 6px;
