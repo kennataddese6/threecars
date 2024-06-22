@@ -267,7 +267,9 @@ export default function Home() {
         <button className="btn btn-primary">Call us</button>
       </div>
       <div className="workstep col-lg-11 col-xl-9">
-        <button className="works-button center-item">How it works</button>
+        <button className="works-button " style={{ margin: "auto" }}>
+          How it works
+        </button>
         <h1 className="steps-header">Buy with following 3 working steps</h1>
       </div>
       <div className="stepsContainer col-lg-10 col-xl-8 center-text">
@@ -435,9 +437,9 @@ export default function Home() {
         <div className="firstServiceContainer col-lg-6">
           <div className=" serviceHolder col-xl-9">
             {" "}
-            <button className="works-button ">Our services</button>
+            <button className="service-button">Our services</button>
             <h3 className="servicesSubHeader">
-              We offer the best expeience <br /> with our sales
+              We offer the best experience with our sales
             </h3>
             <div className="servicesContainer">
               <div className="serviceIconContainer">
@@ -494,14 +496,10 @@ export default function Home() {
         <div className="contactUsFormContainer col-lg-3">
           <input type="text" placeholder="Name" className="contactinputs" />
           <input type="text" placeholder="Email" className="contactinputs" />
-          <textarea
-            placeholder="Message"
-            style={{ width: "100%", height: "128px" }}
-            className="contactinputs"
-          />
+          <textarea placeholder="Message" className="contact-text-area" />
           <button
-            style={{ width: "100%", padding: "8px 0", marginTop: "6px" }}
-            className="btn btn-dark"
+            style={{ padding: "8px 0" }}
+            className="btn btn-dark contactUsButton"
           >
             Get in touch with us
           </button>
