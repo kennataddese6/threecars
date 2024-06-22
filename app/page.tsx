@@ -252,7 +252,7 @@ export default function Home() {
           <MdLocationOn fontSize={32} color="grey" />
           <div>
             <h6>Location</h6>
-            <p>Check our location.</p>
+            <p>53.466154, -113.533717</p>
           </div>
         </div>
         <div className="sneakInfoItem borderLine">
