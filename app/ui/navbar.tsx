@@ -59,7 +59,6 @@ export default function Navbar() {
     setDisplay("headerContainer", "block", "100vh");
   };
   const handleNavigation = (nav: String) => {
-    disableHeaders();
     if (nav === "/shop") {
       const data = localStorage.getItem("sale");
       if (data) {
