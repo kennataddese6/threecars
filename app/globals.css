@@ -264,7 +264,7 @@ p {
 .carCardImage {
   position: relative;
   width: 100%;
-  margin: 12px 12px;
+  margin: 3em;
   height: 250px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
@@ -620,8 +620,8 @@ footer {
     height: 10rem;
   }
   .carCardImage {
-    margin: 20px;
-    height: 250px;
+    margin: 2.5em;
+    height: 25vh;
   }
   #menuicon {
     display: none;
