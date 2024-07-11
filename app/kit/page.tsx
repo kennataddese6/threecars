@@ -13,28 +13,6 @@ import Car9 from "@/assets/Car9.webp";
 import Car10 from "@/assets/Car10.webp";
 import Car11 from "@/assets/Car11.webp";
 export default function Car() {
-  const headerListItems = [
-    {
-      name: "Home",
-      active: false,
-      des: "/",
-    },
-    {
-      name: "Make your own kit",
-      active: true,
-      des: "/kit",
-    },
-    {
-      name: "Parts for sale",
-      active: false,
-      des: "/",
-    },
-    {
-      name: "Our services",
-      active: false,
-      des: "/",
-    },
-  ];
   const carList = [
     {
       name: "Lexus",
@@ -154,28 +132,6 @@ export default function Car() {
   return (
     <>
       {/* Header */}
-      <div className="headerContainer col-lg-12">
-        <div className="headerSubContainer col-lg-11 col-xl-9">
-          <div className="logoContainer col-lg-3">MT CUSTOM LIGHTS</div>
-          <ul className="headerList col-lg-8 col-xl-6">
-            {headerListItems.map((item, index) => (
-              <li
-                key={index}
-                className={
-                  item.active ? `headerItemActive headerItem` : ` headerItem`
-                }
-                onClick={() => router.push(item.des)}
-              >
-                {item.name}
-              </li>
-            ))}
-          </ul>
-          <div className="rightheader col-xl-3">
-            {/* <button className="signinbtn">Sign in</button> */}
-            <button className="btn btn-primary">Sign in</button>
-          </div>
-        </div>
-      </div>
       <div>
         <h6 style={{ color: "white" }} className="center-text">
           Choose you car model

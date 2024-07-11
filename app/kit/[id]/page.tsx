@@ -18,7 +18,7 @@ import Light3 from "@/assets/light3.jpg";
 import Light4 from "@/assets/light4.webp";
 import Light5 from "@/assets/light5.webp";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Popup from "@/components/Popup";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
@@ -30,30 +30,6 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
   const [choices, setChoices] = useState<number[]>([]);
   const [email, setEmail] = useState<String>("");
   const [popupView, setPopupView] = useState<Boolean>(false);
-  const router = useRouter();
-
-  const headerListItems = [
-    {
-      name: "Home",
-      active: false,
-      des: "/",
-    },
-    {
-      name: "Make your own kit",
-      active: true,
-      des: "/kit",
-    },
-    {
-      name: "Parts for sale",
-      active: false,
-      des: "/",
-    },
-    {
-      name: "Our services",
-      active: false,
-      des: "/",
-    },
-  ];
 
   const carList = [
     {
@@ -287,29 +263,6 @@ export default function BuildCarkit({ params }: { params: Paramter }) {
           callFunction={handleRequestOrder}
         />
       )}
-      {/* Header */}
-      <div className="headerContainer col-lg-12">
-        <div className="headerSubContainer col-lg-11 col-xl-9">
-          <div className="logoContainer col-lg-3">MT CUSTOM LIGHTS</div>
-          <ul className="headerList col-lg-8 col-xl-6">
-            {headerListItems.map((item, index) => (
-              <li
-                key={index}
-                className={
-                  item.active ? `headerItemActive headerItem` : ` headerItem`
-                }
-                onClick={() => router.push(item.des)}
-              >
-                {item.name}
-              </li>
-            ))}
-          </ul>
-          <div className="rightheader col-xl-3">
-            {/* <button className="signinbtn">Sign in</button> */}
-            <button className="btn btn-primary">Sign in</button>
-          </div>
-        </div>
-      </div>
       <div className="contentContainer col-lg-11 col-xl-9">
         <div className="col-lg-8">
           <div className="carImagePreivewContainer">
