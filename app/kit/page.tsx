@@ -1,127 +1,127 @@
-"use client";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import Car1 from "@/assets/Car1.webp";
-import Car2 from "@/assets/Car2.webp";
-import Car3 from "@/assets/Car3.webp";
-import Car4 from "@/assets/Car4.webp";
-import Car5 from "@/assets/Car5.webp";
-import Car6 from "@/assets/Car6.webp";
-import Car7 from "@/assets/Car7.webp";
-import Car8 from "@/assets/Car8.webp";
-import Car9 from "@/assets/Car9.webp";
-import Car10 from "@/assets/Car10.webp";
-import Car11 from "@/assets/Car11.webp";
+'use client';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import Car1 from '@/assets/Car1.webp';
+import Car2 from '@/assets/Car2.webp';
+import Car3 from '@/assets/Car3.webp';
+import Car4 from '@/assets/Car4.webp';
+import Car5 from '@/assets/Car5.webp';
+import Car6 from '@/assets/Car6.webp';
+import Car7 from '@/assets/Car7.webp';
+import Car8 from '@/assets/Car8.webp';
+import Car9 from '@/assets/Car9.webp';
+import Car10 from '@/assets/Car10.webp';
+import Car11 from '@/assets/Car11.webp';
 export default function Car() {
   const carList = [
     {
-      name: "Lexus",
+      name: 'Lexus',
       image: Car1,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2019,
-      gas: "Petrol",
-      color: "Blue",
-      miles: "240 Km/h",
+      gas: 'Petrol',
+      color: 'Blue',
+      miles: '240 Km/h',
       trending: true,
     },
     {
-      name: "RAM",
+      name: 'RAM',
       image: Car2,
-      gear: "Manual",
+      gear: 'Manual',
       date: 2023,
-      gas: "Diesel",
-      color: "Red",
-      miles: "320 Km/h",
+      gas: 'Diesel',
+      color: 'Red',
+      miles: '320 Km/h',
       trending: false,
     },
     {
-      name: "Chevrolet",
+      name: 'Chevrolet',
       image: Car4,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2024,
-      gas: "Petrol",
-      color: "Red",
-      miles: "340 Km/h",
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
       trending: false,
     },
     {
-      name: "Mazda",
+      name: 'Mazda',
       image: Car3,
-      gear: "Semiauto",
+      gear: 'Semiauto',
       date: 2024,
-      gas: "Gasoline",
-      color: "Grey",
-      miles: "180 Km/h",
+      gas: 'Gasoline',
+      color: 'Grey',
+      miles: '180 Km/h',
       trending: true,
     },
     {
-      name: "Honda",
+      name: 'Honda',
       image: Car7,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2024,
-      gas: "Petrol",
-      color: "Red",
-      miles: "340 Km/h",
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
       trending: false,
     },
     {
-      name: "Mini",
+      name: 'Mini',
       image: Car5,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2024,
-      gas: "Petrol",
-      color: "Red",
-      miles: "340 Km/h",
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
       trending: false,
     },
     {
-      name: "Subaru",
+      name: 'Subaru',
       image: Car6,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2024,
-      gas: "Petrol",
-      color: "Red",
-      miles: "340 Km/h",
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
       trending: false,
     },
     {
-      name: "Jeep",
+      name: 'Jeep',
       image: Car8,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2024,
-      gas: "Petrol",
-      color: "Red",
-      miles: "340 Km/h",
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
       trending: false,
     },
     {
-      name: "Audi",
+      name: 'Audi',
       image: Car9,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2024,
-      gas: "Petrol",
-      color: "Red",
-      miles: "340 Km/h",
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
       trending: false,
     },
     {
-      name: "Dodge",
+      name: 'Dodge',
       image: Car10,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2024,
-      gas: "Petrol",
-      color: "Red",
-      miles: "340 Km/h",
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
       trending: false,
     },
     {
-      name: "Volkswagen",
+      name: 'Volkswagen',
       image: Car11,
-      gear: "Automatic",
+      gear: 'Automatic',
       date: 2024,
-      gas: "Petrol",
-      color: "Red",
-      miles: "340 Km/h",
+      gas: 'Petrol',
+      color: 'Red',
+      miles: '340 Km/h',
       trending: false,
     },
   ];
@@ -133,9 +133,7 @@ export default function Car() {
     <>
       {/* Header */}
       <div>
-        <h6 style={{ color: "white" }} className="center-text">
-          Choose you car model
-        </h6>
+        <h6 className="center-text">Choose you car model</h6>
       </div>
 
       {/* Content */}
@@ -148,11 +146,11 @@ export default function Car() {
                 handleClick(index);
               }}
             >
-              {" "}
+              {' '}
               <Image src={car.image} alt="Car image" className="shopImage" />
               <div className="carmodelTitle">
-                {" "}
-                <h6 style={{ margin: 0 }}>{car.name}</h6>{" "}
+                {' '}
+                <h6 style={{ margin: 0 }}>{car.name}</h6>{' '}
               </div>
             </div>
           </div>
