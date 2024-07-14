@@ -338,7 +338,7 @@ p {
 }
 .serviceDescription {
   padding: 0 1em;
-  margin: 1em 0;
+  margin: 0.8em 0;
 }
 .addtokitcontainer::-webkit-scrollbar {
   width: 1px;
@@ -430,6 +430,10 @@ p {
   justify-content: center;
   flex-direction: column;
   margin-top: 2em;
+}
+.serviceImageContainer {
+  display: flex;
+  align-items: center;
 }
 .landingpageHeaderText {
   font-size: 2.4vw;

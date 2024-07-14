@@ -343,7 +343,7 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
       >
-        <div className="col-lg-6">
+        <div className="col-lg-6 serviceImageContainer">
           <Image src={sports2} alt="Second Image" className="heroImage" />
         </div>
         <div className="firstServiceContainer col-lg-6">
