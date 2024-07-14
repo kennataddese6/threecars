@@ -402,6 +402,26 @@ export default function Home() {
           </div>
         </div>
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
+        className="workstep col-lg-11 col-xl-9"
+      >
+        <button className="works-button " style={{ margin: 'auto' }}>
+          Popular projects
+        </button>
+        <h1 className="steps-header">Our most popular projects</h1>
+      </motion.div>
+      <div className="projectsContainer col-xl-10">
+        <div className="projects">
+          <Image src={sports2} alt="projectimage" className="projectImage" />
+          <h6 className="center-text">Audi</h6>
+        </div>
+        <div className="projects">1</div>
+        <div className="projects">1</div>
+        <div className="projects">1</div>
+      </div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
         <div className="contactUsFormContainer col-lg-3">
