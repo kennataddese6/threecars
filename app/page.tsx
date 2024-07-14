@@ -1,12 +1,10 @@
 'use client';
-import 'react-toastify/dist/ReactToastify.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './globals.css';
 import ThirdImage from '@/assets/ThirdImage.png';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ToastContainer } from 'react-toastify';
 import { MdLocationOn } from 'react-icons/md';
 import { FaCar } from 'react-icons/fa';
 import Slider from 'react-slick';
@@ -25,6 +23,7 @@ import { RiCarLine } from 'react-icons/ri';
 import { CiShoppingCart } from 'react-icons/ci';
 import { CiAlarmOn } from 'react-icons/ci';
 import sports2 from '@/assets/sports2.png';
+import useGoogleTranslateScript from '@/app/useTranslate';
 import {
   FaRegClock,
   FaPhone,
@@ -65,10 +64,10 @@ export default function Home() {
       },
     ],
   };
+  useGoogleTranslateScript();
 
   return (
     <>
-      <ToastContainer theme="dark" />
       <div className="contentContainer col-lg-11 col-xl-10" id="service"></div>
       <motion.div
         className="contentContainer col-lg-11 col-xl-10"

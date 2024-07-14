@@ -24,6 +24,7 @@ export default function RootLayout({
         <ToastContainer theme="dark" />
         <Navbar />
         {children}
+        <div id="google_translate_element"></div>
       </body>
     </html>
   );
