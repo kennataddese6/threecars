@@ -265,7 +265,6 @@ p {
 .carCardImage {
   position: relative;
   width: 100%;
-  margin: 3em;
   height: 250px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;

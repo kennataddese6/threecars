@@ -137,7 +137,7 @@ export default function Car() {
       </div>
 
       {/* Content */}
-      <div className="contentContainer col-lg-11 col-xl-9">
+      <div className="contentContainer col-lg-11 col-xl-10">
         {carList.map((car, index) => (
           <div className="carCardContainer col-lg-4" key={index}>
             <div
