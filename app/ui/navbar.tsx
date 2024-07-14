@@ -1,31 +1,31 @@
-"use client";
-import { MdClose, MdMenu } from "react-icons/md";
-import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
-import { usePathname } from "next/navigation";
+'use client';
+import { MdClose, MdMenu } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
+import { usePathname } from 'next/navigation';
 export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const headerListItems = [
     {
-      name: "Home",
+      name: 'Home',
       active: true,
-      des: "/",
+      des: '/',
     },
     {
-      name: "Make your own kit",
+      name: 'Make your own kit',
       active: false,
-      des: "/kit",
+      des: '/kit',
     },
     {
-      name: "Parts for sale",
+      name: 'Parts for sale',
       active: false,
-      des: "/shop",
+      des: '/shop',
     },
     {
-      name: "Our services",
+      name: 'Our services',
       active: false,
-      des: "#service",
+      des: '#service',
     },
   ];
 
@@ -35,7 +35,7 @@ export default function Navbar() {
   const setDisplay = (
     elementId: string,
     displayValue: string,
-    height: string
+    height: string,
   ) => {
     const element = getElement(elementId);
     if (element) {
@@ -44,27 +44,27 @@ export default function Navbar() {
     }
   };
   const disableHeaders = () => {
-    setDisplay("header", "none", "auto");
-    setDisplay("headerright", "none", "auto");
-    setDisplay("closeicon", "none", "auto");
-    setDisplay("menuicon", "block", "auto");
-    setDisplay("headerContainer", "block", "auto");
+    setDisplay('header', 'none', 'auto');
+    setDisplay('headerright', 'none', 'auto');
+    setDisplay('closeicon', 'none', 'auto');
+    setDisplay('menuicon', 'block', 'auto');
+    setDisplay('headerContainer', 'block', 'auto');
   };
 
   const enableHeader = () => {
-    setDisplay("header", "block", "auto");
-    setDisplay("headerright", "block", "auto");
-    setDisplay("closeicon", "block", "auto");
-    setDisplay("menuicon", "none", "auto");
-    setDisplay("headerContainer", "block", "100vh");
+    setDisplay('header', 'block', 'auto');
+    setDisplay('headerright', 'block', 'auto');
+    setDisplay('closeicon', 'block', 'auto');
+    setDisplay('menuicon', 'none', 'auto');
+    setDisplay('headerContainer', 'block', '100vh');
   };
   const handleNavigation = (nav: String) => {
-    if (nav === "/shop") {
-      const data = localStorage.getItem("sale");
+    if (nav === '/shop') {
+      const data = localStorage.getItem('sale');
       if (data) {
-        router.push("shop");
+        router.push('shop');
       } else {
-        toast.info("Coming soon.");
+        toast.info('Coming soon.');
       }
     } else {
       router.push(`${nav}`);
@@ -72,19 +72,19 @@ export default function Navbar() {
   };
   return (
     <div className="headerContainer col-lg-12" id="headerContainer">
-      <div className="headerSubContainer col-lg-11 col-xl-9">
+      <div className="headerSubContainer col-lg-11 col-xl-10">
         <div className="logoContainer col-lg-3 ">
           MT CUSTOM LIGHTS
           <MdClose
             color="black"
-            fontSize={"1.5rem"}
+            fontSize={'1.5rem'}
             onClick={disableHeaders}
             id="closeicon"
-            style={{ display: "none" }}
+            style={{ display: 'none' }}
           />
           <MdMenu
             color="black"
-            fontSize={"1.5rem"}
+            fontSize={'1.5rem'}
             onClick={enableHeader}
             id="menuicon"
           />
@@ -108,7 +108,7 @@ export default function Navbar() {
         <div className="rightheader col-xl-3" id="headerright">
           <button
             className="btn btn-primary"
-            onClick={() => router.push("/signin")}
+            onClick={() => router.push('/signin')}
           >
             Sign in
           </button>
