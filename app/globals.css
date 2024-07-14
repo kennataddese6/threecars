@@ -314,7 +314,8 @@ p {
   overflow-y: auto;
 }
 .serviceHolder {
-  padding: 0 2em;
+  padding: 0 0 0 2em;
+  width: 100%;
 }
 .servicesContainer {
   display: flex;
