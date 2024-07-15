@@ -417,11 +417,44 @@ export default function Home() {
       <div className="projectsContainer col-xl-10 col-xxl-9">
         <div className="projects">
           <Image src={sports2} alt="projectimage" className="projectImage" />
-          <h6 className="center-text">Audi</h6>
+          <h5 className="center-text">Audi</h5>
+          <p className="center-text servicesPargraph">
+            We have tackled this project within a limited time frame
+          </p>
+          <button className="btn btn-primary center-item mt-2">
+            Learn More <i className="bi bi-arrow-right"></i>
+          </button>
         </div>
-        <div className="projects">1</div>
-        <div className="projects">1</div>
-        <div className="projects">1</div>
+        <div className="projects">
+          <Image src={sports2} alt="projectimage" className="projectImage" />
+          <h5 className="center-text">Audi</h5>
+          <p className="center-text servicesPargraph">
+            We have tackled this project within a limited time frame
+          </p>
+          <button className="btn btn-primary center-item mt-2">
+            Learn More <i className="bi bi-arrow-right"></i>
+          </button>
+        </div>
+        <div className="projects">
+          <Image src={sports2} alt="projectimage" className="projectImage" />
+          <h5 className="center-text">Audi</h5>
+          <p className="center-text servicesPargraph">
+            We have tackled this project within a limited time frame
+          </p>
+          <button className="btn btn-primary center-item mt-2">
+            Learn More <i className="bi bi-arrow-right"></i>
+          </button>
+        </div>
+        <div className="projects">
+          <Image src={sports2} alt="projectimage" className="projectImage" />
+          <h5 className="center-text">Audi</h5>
+          <p className="center-text servicesPargraph">
+            We have tackled this project within a limited time frame
+          </p>
+          <button className="btn btn-primary center-item mt-2">
+            Learn More <i className="bi bi-arrow-right"></i>
+          </button>
+        </div>
       </div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
