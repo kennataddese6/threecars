@@ -28,6 +28,8 @@ import projectOne from '@/assets/projectOne.webp';
 import projectTwo from '@/assets/projectTwo.webp';
 import projectThree from '@/assets/projectThree.webp';
 import projectFour from '@/assets/projectFour.webp';
+import Footer from './ui/footer';
+
 import {
   FaRegClock,
   FaPhone,
@@ -482,6 +484,7 @@ export default function Home() {
           </button>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

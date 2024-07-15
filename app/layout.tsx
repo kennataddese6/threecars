@@ -5,10 +5,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Navbar from './ui/navbar';
-import Footer from './ui/footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -27,7 +25,6 @@ export default function RootLayout({
         <ToastContainer theme="dark" />
         <Navbar />
         {children}
-        <Footer />
         {/* <div id="google_translate_element"></div> */}
       </body>
     </html>
