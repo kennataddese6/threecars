@@ -501,10 +501,6 @@ p {
 .contactUsButton {
   width: 90%;
 }
-.copyRightFooter {
-  display: flex;
-  flex-wrap: wrap;
-}
 footer {
   padding: 16px 64px;
   display: flex;
@@ -514,6 +510,9 @@ footer {
   background-color: #051c34;
   border-top-right-radius: 32px;
   border-top-left-radius: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 .footerItem {
   padding: 0.5em;
