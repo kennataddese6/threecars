@@ -338,6 +338,7 @@ export default function Home() {
       </div>
       <motion.div
         className="contentContainer col-lg-11 col-xl-10"
+        id="service"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
@@ -345,7 +346,7 @@ export default function Home() {
         <div className="col-lg-6 serviceImageContainer">
           <Image src={sports2} alt="Second Image" className="heroImage" />
         </div>
-        <div className="firstServiceContainer col-lg-6" id="service">
+        <div className="firstServiceContainer col-lg-6">
           <div className=" serviceHolder col-xl-9">
             {" "}
             <button className="service-button">Our services</button>
