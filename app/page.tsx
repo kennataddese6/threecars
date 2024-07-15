@@ -68,10 +68,7 @@ export default function Home() {
 
   return (
     <>
-      <div
-        className="contentContainer col-lg-11 col-xl-10 col-xxl-9"
-        id="service"
-      ></div>
+      <div className="contentContainer col-lg-11 col-xl-10 col-xxl-9"></div>
       <motion.div
         className="contentContainer col-lg-11 col-xl-10 col-xxl-9"
         initial={{ opacity: 0 }}
@@ -348,7 +345,7 @@ export default function Home() {
         <div className="col-lg-6 serviceImageContainer">
           <Image src={sports2} alt="Second Image" className="heroImage" />
         </div>
-        <div className="firstServiceContainer col-lg-6">
+        <div className="firstServiceContainer col-lg-6" id="service">
           <div className=" serviceHolder col-xl-9">
             {" "}
             <button className="service-button">Our services</button>
