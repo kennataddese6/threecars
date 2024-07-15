@@ -1,36 +1,36 @@
-'use client';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './globals.css';
-import ThirdImage from '@/assets/ThirdImage.png';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { MdLocationOn } from 'react-icons/md';
-import { FaCar } from 'react-icons/fa';
-import Slider from 'react-slick';
-import Vw from '@/assets/Vw.png';
-import lexus from '@/assets/lexus.png';
-import honda from '@/assets/honda.png';
-import dodge from '@/assets/dodge.png';
-import audi from '@/assets/audi.png';
-import chev from '@/assets/chev.png';
-import mazda from '@/assets/mazda.png';
-import ram from '@/assets/ram.png';
-import subaru from '@/assets/subaru.png';
-import mini from '@/assets/mini.png';
-import jeep from '@/assets/jeep.png';
-import { RiCarLine } from 'react-icons/ri';
-import { CiShoppingCart } from 'react-icons/ci';
-import { CiAlarmOn } from 'react-icons/ci';
-import sports2 from '@/assets/sports2.png';
-import useGoogleTranslateScript from '@/app/useTranslate';
+"use client";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./globals.css";
+import ThirdImage from "@/assets/ThirdImage.png";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { MdLocationOn } from "react-icons/md";
+import { FaCar } from "react-icons/fa";
+import Slider from "react-slick";
+import Vw from "@/assets/Vw.png";
+import lexus from "@/assets/lexus.png";
+import honda from "@/assets/honda.png";
+import dodge from "@/assets/dodge.png";
+import audi from "@/assets/audi.png";
+import chev from "@/assets/chev.png";
+import mazda from "@/assets/mazda.png";
+import ram from "@/assets/ram.png";
+import subaru from "@/assets/subaru.png";
+import mini from "@/assets/mini.png";
+import jeep from "@/assets/jeep.png";
+import { RiCarLine } from "react-icons/ri";
+import { CiShoppingCart } from "react-icons/ci";
+import { CiAlarmOn } from "react-icons/ci";
+import sports2 from "@/assets/sports2.png";
+import useGoogleTranslateScript from "@/app/useTranslate";
 import {
   FaRegClock,
   FaPhone,
   FaCheckCircle,
   FaCartPlus,
   FaTruckMoving,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 export default function Home() {
   const settings = {
     dots: false,
@@ -68,53 +68,56 @@ export default function Home() {
 
   return (
     <>
-      <div className="contentContainer col-lg-11 col-xl-10" id="service"></div>
+      <div
+        className="contentContainer col-lg-11 col-xl-10 col-xxl-9"
+        id="service"
+      ></div>
       <motion.div
-        className="contentContainer col-lg-11 col-xl-10"
+        className="contentContainer col-lg-11 col-xl-10 col-xxl-9"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
+        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
       >
         <div className="col-lg-6 firstServiceContainer">
-          {' '}
+          {" "}
           <h1 className="heroheaderText">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5, ease: 'easeIn' }}
+              transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
             >
-              See{' '}
+              See{" "}
             </motion.span>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.7, ease: 'easeIn' }}
+              transition={{ duration: 0.5, delay: 0.7, ease: "easeIn" }}
             >
-              through{' '}
+              through{" "}
             </motion.span>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.9, ease: 'easeIn' }}
+              transition={{ duration: 0.5, delay: 0.9, ease: "easeIn" }}
             >
-              the{' '}
+              the{" "}
             </motion.span>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.6, ease: 'easeIn' }}
+              transition={{ duration: 0.5, delay: 1.6, ease: "easeIn" }}
             >
-              {' '}
+              {" "}
               Darkness
             </motion.span>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 2.4, ease: 'easeIn' }}
+              transition={{ duration: 0.5, delay: 2.4, ease: "easeIn" }}
               className="now-span"
             >
-              {' '}
-              Now{' '}
+              {" "}
+              Now{" "}
             </motion.span>
           </h1>
           <p className="customHeadlightsParagraph">
@@ -131,7 +134,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.7, ease: 'easeInOut' }}
+        transition={{ duration: 1.6, delay: 0.7, ease: "easeInOut" }}
         className="sneakinfo col-lg-11 col-xl-9"
       >
         <div className="sneakInfoItem">
@@ -160,10 +163,10 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
+        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
         className="workstep col-lg-11 col-xl-9"
       >
-        <button className="works-button " style={{ margin: 'auto' }}>
+        <button className="works-button " style={{ margin: "auto" }}>
           How it works
         </button>
         <h1 className="steps-header">Buy with following 3 working steps</h1>
@@ -172,7 +175,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5, ease: 'easeInOut' }}
+          transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
           className="col-lg-3 stepItemContainer"
         >
           <div className="stepIconContainer">
@@ -182,13 +185,13 @@ export default function Home() {
             <b>Choose car model</b>
           </h6>
           <p className="stepsPargraph">
-            Select you car model from the build kit.{' '}
+            Select you car model from the build kit.{" "}
           </p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1, ease: 'easeInOut' }}
+          transition={{ duration: 1, delay: 1, ease: "easeInOut" }}
           className="col-lg-3 stepItemContainer"
         >
           <div className="stepIconContainer">
@@ -198,14 +201,14 @@ export default function Home() {
             <b>Add your lights</b>
           </h6>
           <p className="stepsPargraph">
-            Add you lights for the car of your choice.{' '}
+            Add you lights for the car of your choice.{" "}
           </p>
         </motion.div>
         <motion.div
           className="col-lg-3 stepItemContainer"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5, ease: 'easeInOut' }}
+          transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
         >
           <div className="stepIconContainer">
             <FaTruckMoving color="#0d6efd" fontSize={32} />
@@ -214,7 +217,7 @@ export default function Home() {
             <b>Order you kits</b>
           </h6>
           <p className="stepsPargraph">
-            Book your lights and we will deliver it to you.{' '}
+            Book your lights and we will deliver it to you.{" "}
           </p>
         </motion.div>
       </div>
@@ -229,7 +232,7 @@ export default function Home() {
             />
           </div>
           <div>
-            {' '}
+            {" "}
             <Image
               src={lexus}
               alt="Volswagen"
@@ -238,7 +241,7 @@ export default function Home() {
             />
           </div>
           <div>
-            {' '}
+            {" "}
             <Image
               src={dodge}
               alt="Volswagen"
@@ -253,7 +256,7 @@ export default function Home() {
               width={100}
               className="center-item"
               height={100}
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div>
@@ -263,7 +266,7 @@ export default function Home() {
               width={100}
               className="center-item"
               height={100}
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div>
@@ -273,7 +276,7 @@ export default function Home() {
               width={100}
               className="center-item"
               height={100}
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div>
@@ -283,7 +286,7 @@ export default function Home() {
               width={100}
               className="center-item"
               height={80}
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div>
@@ -293,7 +296,7 @@ export default function Home() {
               width={100}
               height={100}
               className="center-item"
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div>
@@ -305,7 +308,7 @@ export default function Home() {
                   width={100}
                   className="center-item"
                   height={100}
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </h3>
@@ -318,7 +321,7 @@ export default function Home() {
                 width={100}
                 className="center-item"
                 height={100}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
               />
             </h3>
           </div>
@@ -330,7 +333,7 @@ export default function Home() {
                 width={100}
                 className="center-item"
                 height={100}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
               />
             </h3>
           </div>
@@ -340,14 +343,14 @@ export default function Home() {
         className="contentContainer col-lg-11 col-xl-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
+        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
       >
         <div className="col-lg-6 serviceImageContainer">
           <Image src={sports2} alt="Second Image" className="heroImage" />
         </div>
         <div className="firstServiceContainer col-lg-6">
           <div className=" serviceHolder col-xl-9">
-            {' '}
+            {" "}
             <button className="service-button">Our services</button>
             <h3 className="servicesSubHeader">
               We offer the best experience with our sales
@@ -405,15 +408,15 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: 'easeInOut' }}
+        transition={{ duration: 1.6, delay: 0.5, ease: "easeInOut" }}
         className="workstep col-lg-11 col-xl-9"
       >
-        <button className="works-button " style={{ margin: 'auto' }}>
+        <button className="works-button " style={{ margin: "auto" }}>
           Popular projects
         </button>
         <h1 className="steps-header">Our most popular projects</h1>
       </motion.div>
-      <div className="projectsContainer col-xl-10">
+      <div className="projectsContainer col-xl-10 col-xxl-9">
         <div className="projects">
           <Image src={sports2} alt="projectimage" className="projectImage" />
           <h6 className="center-text">Audi</h6>
@@ -429,7 +432,7 @@ export default function Home() {
           <input type="text" placeholder="Email" className="contactinputs" />
           <textarea placeholder="Message" className="contact-text-area" />
           <button
-            style={{ padding: '8px 0' }}
+            style={{ padding: "8px 0" }}
             className="btn btn-dark contactUsButton"
           >
             Get in touch with us
