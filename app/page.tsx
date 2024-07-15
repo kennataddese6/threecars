@@ -24,6 +24,10 @@ import { CiShoppingCart } from "react-icons/ci";
 import { CiAlarmOn } from "react-icons/ci";
 import sports2 from "@/assets/sports2.png";
 import useGoogleTranslateScript from "@/app/useTranslate";
+import projectOne from "@/assets/projectOne.webp";
+import projectTwo from "@/assets/projectTwo.webp";
+import projectThree from "@/assets/projectThree.webp";
+import projectFour from "@/assets/projectFour.webp";
 import {
   FaRegClock,
   FaPhone,
@@ -416,7 +420,7 @@ export default function Home() {
       </motion.div>
       <div className="projectsContainer col-xl-10 col-xxl-9">
         <div className="projects">
-          <Image src={sports2} alt="projectimage" className="projectImage" />
+          <Image src={projectOne} alt="projectimage" className="projectImage" />
           <h5 className="center-text">Audi</h5>
           <p className="center-text servicesPargraph">
             We have tackled this project within a limited time frame
@@ -426,7 +430,7 @@ export default function Home() {
           </button>
         </div>
         <div className="projects">
-          <Image src={sports2} alt="projectimage" className="projectImage" />
+          <Image src={projectTwo} alt="projectimage" className="projectImage" />
           <h5 className="center-text">Audi</h5>
           <p className="center-text servicesPargraph">
             We have tackled this project within a limited time frame
@@ -436,7 +440,11 @@ export default function Home() {
           </button>
         </div>
         <div className="projects">
-          <Image src={sports2} alt="projectimage" className="projectImage" />
+          <Image
+            src={projectThree}
+            alt="projectimage"
+            className="projectImage"
+          />
           <h5 className="center-text">Audi</h5>
           <p className="center-text servicesPargraph">
             We have tackled this project within a limited time frame
@@ -446,7 +454,11 @@ export default function Home() {
           </button>
         </div>
         <div className="projects">
-          <Image src={sports2} alt="projectimage" className="projectImage" />
+          <Image
+            src={projectFour}
+            alt="projectimage"
+            className="projectImage"
+          />
           <h5 className="center-text">Audi</h5>
           <p className="center-text servicesPargraph">
             We have tackled this project within a limited time frame
