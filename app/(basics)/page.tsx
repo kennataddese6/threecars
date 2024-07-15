@@ -1,7 +1,6 @@
 'use client';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './globals.css';
 import ThirdImage from '@/assets/ThirdImage.png';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -28,7 +27,6 @@ import projectOne from '@/assets/projectOne.webp';
 import projectTwo from '@/assets/projectTwo.webp';
 import projectThree from '@/assets/projectThree.webp';
 import projectFour from '@/assets/projectFour.webp';
-import Footer from './ui/footer';
 
 import {
   FaRegClock,
@@ -484,7 +482,6 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
