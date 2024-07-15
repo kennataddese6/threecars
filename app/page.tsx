@@ -459,7 +459,7 @@ export default function Home() {
             alt="projectimage"
             className="projectImage"
           />
-          <h5 className="center-text">Audi</h5>
+          <h5 className="center-text">Mini</h5>
           <p className="center-text servicesPargraph">
             We have tackled this project within a limited time frame
           </p>
