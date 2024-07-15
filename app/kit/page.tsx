@@ -133,7 +133,8 @@ export default function Car() {
     <>
       {/* Header */}
       <div>
-        <h6 className="center-text">Choose you car model</h6>
+        {/* <h6 className="center-text">Choose you car model</h6> */}
+        <button className="works-button">Choose your car model</button>
       </div>
 
       {/* Content */}
