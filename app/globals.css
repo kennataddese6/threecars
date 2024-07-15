@@ -110,7 +110,7 @@ body,
   margin: 16px auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 .projects {
   width: 250px;
@@ -528,6 +528,9 @@ footer {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .projectsContainer {
+    justify-content: space-between;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
