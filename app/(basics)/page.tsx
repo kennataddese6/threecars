@@ -27,7 +27,7 @@ import projectOne from '@/assets/projectOne.webp';
 import projectTwo from '@/assets/projectTwo.webp';
 import projectThree from '@/assets/projectThree.webp';
 import projectFour from '@/assets/projectFour.webp';
-
+import { useState, useEffect } from 'react';
 import {
   FaRegClock,
   FaPhone,
@@ -35,7 +35,15 @@ import {
   FaCartPlus,
   FaTruckMoving,
 } from 'react-icons/fa';
+interface Project {
+  title: string;
+  image: string;
+  description: string;
+  // Add other properties as needed
+}
 export default function Home() {
+  const [projects, setProjects] = useState<Project[]>([]);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -69,7 +77,12 @@ export default function Home() {
     ],
   };
   useGoogleTranslateScript();
-
+  useEffect(() => {
+    const data = localStorage.getItem('project');
+    if (data) {
+      setProjects(JSON.parse(data));
+    }
+  }, []);
   return (
     <>
       <div className="contentContainer col-lg-11 col-xl-10 col-xxl-9"></div>
@@ -467,6 +480,24 @@ export default function Home() {
             Learn More <i className="bi bi-arrow-right"></i>
           </button>
         </div>
+        {projects.map(project => (
+          <div className="projects">
+            <Image
+              src={project.image}
+              alt="projectimage"
+              className="projectImage"
+              width={100}
+              height={100}
+            />
+            <h5 className="center-text">{project.title}</h5>
+            <p className="center-text servicesPargraph">
+              {project.description}
+            </p>
+            <button className="btn btn-primary mx-auto d-block mt-2">
+              Learn More <i className="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        ))}
       </div>
       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
