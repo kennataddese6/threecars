@@ -1,9 +1,9 @@
-"use client";
-import { toast } from "react-toastify";
-import { useState, ChangeEvent } from "react";
+'use client';
+import { toast } from 'react-toastify';
+import { useState, ChangeEvent } from 'react';
 export default function AddProject() {
-  const [title, setTitle] = useState("");
-  const [description, setProjectDescription] = useState("");
+  const [title, setTitle] = useState('');
+  const [description, setProjectDescription] = useState('');
   const [image, setImage] = useState<string | undefined>();
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -19,13 +19,14 @@ export default function AddProject() {
   };
 
   const handleClick = () => {
+    setTitle('');
+    setProjectDescription('');
     const data = {
       title,
       description,
       image,
     };
-    console.log(data, "data");
-    const existingData = localStorage.getItem("project");
+    const existingData = localStorage.getItem('project');
     let updatedData: any[] = [];
     if (existingData) {
       const sale = JSON.parse(existingData);
@@ -33,17 +34,14 @@ export default function AddProject() {
     } else {
       updatedData = [data];
     }
-    console.log(updatedData, "updated data");
-    localStorage.setItem("project", JSON.stringify(updatedData));
-    setTitle("");
-    setProjectDescription("");
-    toast.success("Success");
+    localStorage.setItem('project', JSON.stringify(updatedData));
+    toast.success('Success');
   };
   return (
     <>
       <div
         className="container d-flex align-items-center"
-        style={{ height: "100vh" }}
+        style={{ height: '100vh' }}
       >
         <div className="card w-100">
           <div className="card-header">
@@ -57,7 +55,8 @@ export default function AddProject() {
                 className="form-control"
                 id="projectTitle"
                 placeholder="Enter project title"
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={e => setTitle(e.target.value)}
+                value={title}
               />
             </div>
             <div className="form-group mb-3">
@@ -67,7 +66,8 @@ export default function AddProject() {
                 id="projectDescription"
                 rows={3}
                 placeholder="Enter project description"
-                onChange={(e) => setProjectDescription(e.target.value)}
+                onChange={e => setProjectDescription(e.target.value)}
+                value={description}
               ></textarea>
             </div>
             <div className="form-group mb-3">
@@ -82,7 +82,7 @@ export default function AddProject() {
             <button
               type="submit"
               className="btn btn-primary px-4"
-              onClick={() => handleClick}
+              onClick={handleClick}
             >
               Submit
             </button>
