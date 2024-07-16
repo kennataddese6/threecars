@@ -524,6 +524,17 @@ footer {
   transform: translate(-50%, -50%);
   padding: 32px;
 }
+.formContainer {
+  width: 90%;
+  height: 50vh;
+  max-width: 400px;
+  background-color: #1572d3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 }
