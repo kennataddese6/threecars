@@ -1,4 +1,44 @@
+"use client";
+import { toast } from "react-toastify";
+import { useState, ChangeEvent } from "react";
 export default function AddProject() {
+  const [title, setTitle] = useState("");
+  const [description, setProjectDescription] = useState("");
+  const [image, setImage] = useState<string | undefined>();
+
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0];
+    if (selectedFile) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64Image = reader.result as string;
+        setImage(base64Image);
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+  };
+
+  const handleClick = () => {
+    const data = {
+      title,
+      description,
+      image,
+    };
+    console.log(data, "data");
+    const existingData = localStorage.getItem("project");
+    let updatedData: any[] = [];
+    if (existingData) {
+      const sale = JSON.parse(existingData);
+      updatedData = [...sale, data];
+    } else {
+      updatedData = [data];
+    }
+    console.log(updatedData, "updated data");
+    localStorage.setItem("project", JSON.stringify(updatedData));
+    setTitle("");
+    setProjectDescription("");
+    toast.success("Success");
+  };
   return (
     <>
       <div
@@ -10,37 +50,42 @@ export default function AddProject() {
             <h3>Add New Project</h3>
           </div>
           <div className="card-body">
-            <form>
-              <div className="form-group mb-3">
-                <label htmlFor="projectTitle">Project Title</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="projectTitle"
-                  placeholder="Enter project title"
-                />
-              </div>
-              <div className="form-group mb-3">
-                <label htmlFor="projectDescription">Project Description</label>
-                <textarea
-                  className="form-control"
-                  id="projectDescription"
-                  rows={3}
-                  placeholder="Enter project description"
-                ></textarea>
-              </div>
-              <div className="form-group mb-3">
-                <label htmlFor="projectFile">Upload Project File</label>
-                <input
-                  type="file"
-                  className="form-control-file"
-                  id="projectFile"
-                />
-              </div>
-              <button type="submit" className="btn btn-primary px-4">
-                Submit
-              </button>
-            </form>
+            <div className="form-group mb-3">
+              <label htmlFor="projectTitle">Project Title</label>
+              <input
+                type="text"
+                className="form-control"
+                id="projectTitle"
+                placeholder="Enter project title"
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </div>
+            <div className="form-group mb-3">
+              <label htmlFor="projectDescription">Project Description</label>
+              <textarea
+                className="form-control"
+                id="projectDescription"
+                rows={3}
+                placeholder="Enter project description"
+                onChange={(e) => setProjectDescription(e.target.value)}
+              ></textarea>
+            </div>
+            <div className="form-group mb-3">
+              <label htmlFor="projectFile">Upload Project File</label>
+              <input
+                type="file"
+                className="form-control-file"
+                id="projectFile"
+                onChange={handleFileChange}
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn btn-primary px-4"
+              onClick={() => handleClick}
+            >
+              Submit
+            </button>
           </div>
         </div>
       </div>
