@@ -74,6 +74,7 @@ body,
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 900;
   /* font-size: large; */
 }
 #menuicon {
@@ -198,7 +199,7 @@ body,
 .sneakinfo {
   color: black;
   margin: 32px auto;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 0 6px 8px 0 rgba(176, 176, 176, 0.2),
     0 10px 12px 0 rgba(196, 196, 196, 0.19);
   border-radius: 12px;
