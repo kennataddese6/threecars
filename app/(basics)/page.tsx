@@ -499,7 +499,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div className="footerOne">
+      {/*       <div className="footerOne">
         <h1 className="center-text play-write">Get in touch with us</h1>
         <div className="contactUsFormContainer col-lg-3">
           <input type="text" placeholder="Name" className="contactinputs" />
@@ -512,7 +512,7 @@ export default function Home() {
             Get in touch with us
           </button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
